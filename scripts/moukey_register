@@ -1,13 +1,25 @@
 #!/bin/bash
 
-moukey -l
-read -p "Select devices: " variable1 variable2 variable3 variable4
-echo "$variable1 - $variable2 - $variable3 - $variable4"
-exit 1
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
-cmd="sudo -H -u root python3 /etc/moukey &"
+echo "Moukey Server 0.1.2020 by German Espinosa "
+echo "------------------------------------------"
+
+if [ "$1" == "remove" ]; then
+  cmd=""
+else
+  cmd="moukey_run $DIR/moukey.cfg &"
+fi
+
 input="/etc/rc.local"
 if [ ! -f $input ]; then
+    echo "creating $input"
     sudo echo '#!/bin/sh' > $input
     sudo echo '#' >> $input
     sudo echo '# rc.local' >> $input
@@ -21,23 +33,27 @@ if [ ! -f $input ]; then
     sudo echo '#' >> $input
     sudo echo '# By default this script does nothing.' >> $input
     sudo echo 'exit 0' >> $input
+else
+    echo "$input found. Adding automatic startup"
 fi
 
 output=$(mktemp)
 added=0
 while IFS= read -r line
 do
-  if [ "$line" == "$cmd" ]; then
-    break
+  if [[ "$line" == "moukey_run"* ]]; then
+    echo "#$line" >> $output
+  else
+    if [ "$line" == "exit 0" ]; then
+      echo "$cmd" >> $output
+      added=1
+    fi
+    echo "$line" >> $output
   fi
-  if [ "$line" == "exit 0" ]; then
-    echo "$cmd" >> $output
-    added=1
-  fi
-  echo "$line" >> $output
 done < "$input"
 if (( added == 1)); then
   sudo cp $output $input
 fi
 sudo chmod +x $input
 
+echo "Moukey registered successfully. Reboot needed"

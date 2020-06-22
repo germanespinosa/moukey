@@ -1,0 +1,54 @@
+#!/bin/bash
+
+function get_device_names (){
+  if [ "$1" == "a" ]; then
+    i=0
+    device_name=$(moukey -l $i)
+    done=$?
+    while [ $done -eq 0 ]; do
+      printf "\"$device_name\" "
+      i=$((i + 1))
+      device_name=$(moukey -l $i)
+      done=$?
+    done
+  else
+    for var in "$@"
+    do
+      device_name=$(moukey -l $var)
+      printf "\"$device_name\" "
+    done
+  fi
+  printf "\n"
+}
+
+echo "Moukey Server 0.1.2020 by German Espinosa "
+echo "------------------------------------------"
+moukey -l
+echo "a: All"
+read -p "Select devices: " device_numbers
+device_names=$(get_device_names $device_numbers)
+
+read -p "Select port[4749]: " port
+if [ "$port" == "" ]; then
+  port="4749"
+fi
+
+read -p "Select port[root]: " user
+if [ "$user" == "" ]; then
+  user="root"
+fi
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+
+echo "$user" > $DIR/moukey.cfg
+echo "$port $device_names" >> $DIR/moukey.cfg
+
+echo "configuration file saved"
+
+moukey_run

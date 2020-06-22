@@ -1,17 +1,7 @@
 #!/bin/bash
+exit 1
 
-#curl -s https://raw.githubusercontent.com/germanespinosa/moukey/master/install_server.sh | sudo bash
-sudo su
-
-echo "Installing Moukey Server 0.1.2020 by German Espinosa "
-echo "---------------------------------------------------- "
-
-sudo apt-get install python3-pip -y > /dev/null
-sudo pip3 install psutil evdev python-uinput asyncio > /dev/null
-sudo wget --quiet --output-document /etc/moukey_server.py https://raw.githubusercontent.com/germanespinosa/moukey/master/moukey_server.py > /dev/null
-sudo wget --quiet --output-document /etc/moukey_connection.py https://raw.githubusercontent.com/germanespinosa/moukey/master/moukey_connection.py > /dev/null
-sudo wget --quiet --output-document /etc/moukey_device_pool.py https://raw.githubusercontent.com/germanespinosa/moukey/master/moukey_device_pool.py > /dev/null
-cmd="sudo -H -u pi python3 /etc/moukey_server.py -d &"
+cmd="sudo -H -u root python3 /etc/moukey &"
 input="/etc/rc.local"
 if [ ! -f $input ]; then
     sudo echo '#!/bin/sh' > $input
@@ -47,4 +37,3 @@ if (( added == 1)); then
 fi
 sudo chmod +x $input
 
-echo "Moukey installed successfully. Reboot needed"

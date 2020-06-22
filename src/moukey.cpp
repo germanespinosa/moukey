@@ -18,8 +18,10 @@ namespace moukey{
         dp.init();
         if (device_ind< dp.devices.size())
             cout << dp[device_ind].name() << endl;
-        else
+        else {
             cerr << "Device not found" << endl;
+            exit(1);
+        }
     }
 
     void print_events(Device &d){

@@ -73,3 +73,7 @@ install(TARGETS moukey
         DESTINATION bin )
 
 install(DIRECTORY scripts/ DESTINATION bin)
+install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/moukey_run)")
+install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/moukey_register)")
+install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/moukey_server)")
+install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/moukey_client)")

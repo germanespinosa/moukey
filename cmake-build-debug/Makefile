@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /opt/clion-2019.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /opt/clion-2019.3/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,26 +59,26 @@ CMAKE_BINARY_DIR = /home/german/moukey/cmake-build-debug
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -90,10 +90,22 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -101,22 +113,10 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -157,43 +157,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named moukey
+# Target rules for targets named moukey_t
 
 # Build rule for target.
-moukey: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey
-.PHONY : moukey
+moukey_t: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moukey_t
+.PHONY : moukey_t
 
 # fast build rule for target.
-moukey/fast:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/build
-.PHONY : moukey/fast
-
-#=============================================================================
-# Target rules for targets named moukey_v
-
-# Build rule for target.
-moukey_v: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_v
-.PHONY : moukey_v
-
-# fast build rule for target.
-moukey_v/fast:
-	$(MAKE) -f CMakeFiles/moukey_v.dir/build.make CMakeFiles/moukey_v.dir/build
-.PHONY : moukey_v/fast
-
-#=============================================================================
-# Target rules for targets named moukey_l
-
-# Build rule for target.
-moukey_l: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_l
-.PHONY : moukey_l
-
-# fast build rule for target.
-moukey_l/fast:
-	$(MAKE) -f CMakeFiles/moukey_l.dir/build.make CMakeFiles/moukey_l.dir/build
-.PHONY : moukey_l/fast
+moukey_t/fast:
+	$(MAKE) -f CMakeFiles/moukey_t.dir/build.make CMakeFiles/moukey_t.dir/build
+.PHONY : moukey_t/fast
 
 #=============================================================================
 # Target rules for targets named moukey_d
@@ -207,6 +181,32 @@ moukey_d: cmake_check_build_system
 moukey_d/fast:
 	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/build
 .PHONY : moukey_d/fast
+
+#=============================================================================
+# Target rules for targets named moukey_s
+
+# Build rule for target.
+moukey_s: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moukey_s
+.PHONY : moukey_s
+
+# fast build rule for target.
+moukey_s/fast:
+	$(MAKE) -f CMakeFiles/moukey_s.dir/build.make CMakeFiles/moukey_s.dir/build
+.PHONY : moukey_s/fast
+
+#=============================================================================
+# Target rules for targets named moukey_l
+
+# Build rule for target.
+moukey_l: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moukey_l
+.PHONY : moukey_l
+
+# fast build rule for target.
+moukey_l/fast:
+	$(MAKE) -f CMakeFiles/moukey_l.dir/build.make CMakeFiles/moukey_l.dir/build
+.PHONY : moukey_l/fast
 
 #=============================================================================
 # Target rules for targets named moukey_lib
@@ -235,30 +235,30 @@ moukey_c/fast:
 .PHONY : moukey_c/fast
 
 #=============================================================================
-# Target rules for targets named moukey_t
+# Target rules for targets named moukey_v
 
 # Build rule for target.
-moukey_t: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_t
-.PHONY : moukey_t
+moukey_v: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moukey_v
+.PHONY : moukey_v
 
 # fast build rule for target.
-moukey_t/fast:
-	$(MAKE) -f CMakeFiles/moukey_t.dir/build.make CMakeFiles/moukey_t.dir/build
-.PHONY : moukey_t/fast
+moukey_v/fast:
+	$(MAKE) -f CMakeFiles/moukey_v.dir/build.make CMakeFiles/moukey_v.dir/build
+.PHONY : moukey_v/fast
 
 #=============================================================================
-# Target rules for targets named moukey_s
+# Target rules for targets named moukey
 
 # Build rule for target.
-moukey_s: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_s
-.PHONY : moukey_s
+moukey: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moukey
+.PHONY : moukey
 
 # fast build rule for target.
-moukey_s/fast:
-	$(MAKE) -f CMakeFiles/moukey_s.dir/build.make CMakeFiles/moukey_s.dir/build
-.PHONY : moukey_s/fast
+moukey/fast:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/build
+.PHONY : moukey/fast
 
 main.o: main.cpp.o
 
@@ -648,19 +648,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/local"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... edit_cache"
-	@echo "... moukey"
 	@echo "... install/strip"
-	@echo "... moukey_v"
-	@echo "... moukey_l"
-	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... moukey_t"
 	@echo "... moukey_d"
+	@echo "... install"
+	@echo "... moukey_s"
+	@echo "... moukey_l"
+	@echo "... edit_cache"
 	@echo "... moukey_lib"
 	@echo "... moukey_c"
-	@echo "... moukey_t"
-	@echo "... moukey_s"
+	@echo "... moukey_v"
+	@echo "... moukey"
+	@echo "... rebuild_cache"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
