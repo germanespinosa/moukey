@@ -16,6 +16,7 @@ namespace moukey {
         address.sin_port = htons(port);
         if(inet_pton(AF_INET, a.c_str(), &address.sin_addr)<=0) return false;
         if (connect(fd, (struct sockaddr *)&address, sizeof(address)) < 0) return false;
+        return true;
     }
 
     void Client::stop_listening() {

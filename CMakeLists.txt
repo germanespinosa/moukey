@@ -18,46 +18,49 @@ find_package(PkgConfig REQUIRED)
 
 pkg_search_module(EVDEV REQUIRED libevdev)
 
+
 include_directories(
         ${EVDEV_INCLUDE_DIRS}
         include/)
 
-add_executable(moukey_l
-        src/device_list.cpp)
 
-target_link_libraries(moukey_l moukey_lib
-        ${EVDEV_LIBRARIES})
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    add_executable(moukey_l
+            src/device_list.cpp)
 
-add_executable(moukey_d
-        src/device_display.cpp src/server.cpp)
+    target_link_libraries(moukey_l moukey_lib
+            ${EVDEV_LIBRARIES})
 
-target_link_libraries(moukey_d moukey_lib
-        ${EVDEV_LIBRARIES})
+    add_executable(moukey_d
+            src/device_display.cpp src/server.cpp)
 
-add_executable(moukey_t
-        src/device_test.cpp)
+    target_link_libraries(moukey_d moukey_lib
+            ${EVDEV_LIBRARIES})
 
-target_link_libraries(moukey_t moukey_lib
-        ${EVDEV_LIBRARIES})
+    add_executable(moukey_t
+            src/device_test.cpp)
 
-add_executable(moukey_s
-        src/device_server.cpp)
+    target_link_libraries(moukey_t moukey_lib
+            ${EVDEV_LIBRARIES})
 
-target_link_libraries(moukey_s moukey_lib
-        ${EVDEV_LIBRARIES})
+    add_executable(moukey_s
+            src/device_server.cpp)
 
-add_executable(moukey_c
-        src/device_client.cpp)
+    target_link_libraries(moukey_s moukey_lib
+            ${EVDEV_LIBRARIES})
 
-target_link_libraries(moukey_c moukey_lib
-        ${EVDEV_LIBRARIES})
+    add_executable(moukey_c
+            src/device_client.cpp)
 
-add_executable(moukey_v
-        src/device_vd_test.cpp)
+    target_link_libraries(moukey_c moukey_lib
+            ${EVDEV_LIBRARIES})
 
-target_link_libraries(moukey_v moukey_lib
-        ${EVDEV_LIBRARIES})
+    add_executable(moukey_v
+            src/device_vd_test.cpp)
 
+    target_link_libraries(moukey_v moukey_lib
+            ${EVDEV_LIBRARIES})
+endif()
 
 add_executable(moukey
         main.cpp)
