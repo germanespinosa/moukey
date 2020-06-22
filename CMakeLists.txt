@@ -67,4 +67,5 @@ target_link_libraries(moukey moukey_lib
 
 
 install(TARGETS moukey
-        RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
+        RUNTIME  DESTINATION bin
+        DESTINATION bin )
