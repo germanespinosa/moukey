@@ -46,9 +46,9 @@ while [ -h "$SOURCE" ]; do
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
-echo "$user" > $DIR/moukey.cfg
-echo "$port $device_names" >> $DIR/moukey.cfg
+sudo echo "$user" > $DIR/moukey.cfg
+sudo echo "$port $device_names" >> $DIR/moukey.cfg
 
 echo "configuration file saved"
 
-moukey_run
+moukey_run &
