@@ -1,0 +1,14 @@
+/home/german/moukey/build/CMakeFiles/install/local.dir
+/home/german/moukey/build/CMakeFiles/install.dir
+/home/german/moukey/build/CMakeFiles/list_install_components.dir
+/home/german/moukey/build/CMakeFiles/edit_cache.dir
+/home/german/moukey/build/CMakeFiles/moukey.dir
+/home/german/moukey/build/CMakeFiles/install/strip.dir
+/home/german/moukey/build/CMakeFiles/moukey_v.dir
+/home/german/moukey/build/CMakeFiles/moukey_l.dir
+/home/german/moukey/build/CMakeFiles/rebuild_cache.dir
+/home/german/moukey/build/CMakeFiles/moukey_d.dir
+/home/german/moukey/build/CMakeFiles/moukey_lib.dir
+/home/german/moukey/build/CMakeFiles/moukey_c.dir
+/home/german/moukey/build/CMakeFiles/moukey_t.dir
+/home/german/moukey/build/CMakeFiles/moukey_s.dir
