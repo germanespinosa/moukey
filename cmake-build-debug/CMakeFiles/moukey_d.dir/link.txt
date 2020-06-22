@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/moukey_d.dir/src/device_display.cpp.o CMakeFiles/moukey_d.dir/src/server.cpp.o  -o moukey_d  libmoukey.a -levdev 

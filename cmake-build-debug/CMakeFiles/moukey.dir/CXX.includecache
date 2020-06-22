@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/event.h
+libevdev/libevdev.h
+-
+string
+-
+vector
+-
+
+../include/virtual_device.h
+event.h
+-
+libevdev/libevdev.h
+-
+libevdev/libevdev-uinput.h
+-
+string
+-
+vector
+-
+
+/home/german/moukey/src/virtual_device.cpp
+virtual_device.h
+-
+iostream
+-
+fcntl.h
+-
+
+/usr/include/libevdev-1.0/libevdev/libevdev-uinput.h
+libevdev/libevdev.h
+-
+
+/usr/include/libevdev-1.0/libevdev/libevdev.h
+linux/input.h
+-
+stdarg.h
+-
+

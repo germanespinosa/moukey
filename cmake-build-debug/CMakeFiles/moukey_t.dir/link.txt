@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/moukey_t.dir/src/device_test.cpp.o  -o moukey_t  libmoukey.a -levdev 

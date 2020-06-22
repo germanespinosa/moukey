@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/event.h
+libevdev/libevdev.h
+-
+string
+-
+vector
+-
+
+../include/server.h
+event.h
+-
+netinet/in.h
+-
+string
+-
+vector
+-
+thread
+-
+
+/home/german/moukey/src/server.cpp
+poll.h
+-
+unistd.h
+-
+sys/socket.h
+-
+iostream
+-
+server.h
+-
+
+/usr/include/libevdev-1.0/libevdev/libevdev.h
+linux/input.h
+-
+stdarg.h
+-
+
