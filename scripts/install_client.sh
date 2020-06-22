@@ -4,9 +4,9 @@
 
 sudo apt-get install git -y
 
-tmp_dir=$(mktemp -d -t ci-moukey-install)
+#tmp_dir=$(mktemp -d -t ci-moukey-install)
 
-cd tmp_dir
+#cd tmp_dir
 
 git clone https://github.com/germanespinosa/moukey.git
 
