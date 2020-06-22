@@ -71,3 +71,5 @@ target_link_libraries(moukey moukey_lib
 install(TARGETS moukey
         RUNTIME  DESTINATION bin
         DESTINATION bin )
+
+install(DIRECTORY scripts/ DESTINATION bin)
