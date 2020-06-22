@@ -1,31 +1,10 @@
 #!/bin/bash
 
-#curl https://raw.githubusercontent.com/germanespinosa/moukey/master/install_client.sh | sudo bash
-
-sudo apt-get install git -y
-
-#tmp_dir=$(mktemp -d -t ci-moukey-install)
-
-#cd tmp_dir
-
-git clone https://github.com/germanespinosa/moukey.git
-
-cd moukey
-
-mkdir build
-
-cd build
-
-cmake ..
-
-make
-
+moukey -l
+read -p "Select devices: " variable1 variable2 variable3 variable4
+echo "$variable1 $variable2 $variable3 $variable4"
 exit 1
 
-
-sudo apt-get install python3-pip -y
-sudo pip3 install psutil evdev python-uinput
-sudo wget --output-document /etc/moukey_client.py https://raw.githubusercontent.com/germanespinosa/moukey/master/client.py
 cmd="sudo -H -u root python3 /etc/moukey &"
 input="/etc/rc.local"
 if [ ! -f $input ]; then
