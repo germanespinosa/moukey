@@ -21,7 +21,27 @@
     <list default="true" id="bd2bfc81-edae-4b4b-a101-17f0e88e2e1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_c.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_c.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_d.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_d.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_l.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_l.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/src/client.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/src/client.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/src/device.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/src/device.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_s.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_s.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_t.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_t.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_v.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_v.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libmoukey_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libmoukey_lib.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_l" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_l" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_s" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_t" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_t" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_v" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/install_client.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_register_client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/install_server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_register_server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/moukey" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1592836766017</updated>
       <workItem from="1592836772348" duration="12480000" />
-      <workItem from="1592850795819" duration="4029000" />
+      <workItem from="1592850795819" duration="4323000" />
     </task>
     <servers />
   </component>

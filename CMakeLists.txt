@@ -68,7 +68,6 @@ add_executable(moukey
 target_link_libraries(moukey moukey_lib
         ${EVDEV_LIBRARIES})
 
-
 install(TARGETS moukey
         RUNTIME  DESTINATION bin
         DESTINATION bin )
