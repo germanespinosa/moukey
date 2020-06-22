@@ -2,7 +2,7 @@
 
 moukey -l
 read -p "Select devices: " variable1 variable2 variable3 variable4
-echo "$variable1 $variable2 $variable3 $variable4"
+echo "$variable1 - $variable2 - $variable3 - $variable4"
 exit 1
 
 cmd="sudo -H -u root python3 /etc/moukey &"
