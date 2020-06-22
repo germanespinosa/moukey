@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/moukey.dir/src/device.cpp.o"
   "CMakeFiles/moukey.dir/src/device_pool.cpp.o"
   "CMakeFiles/moukey.dir/src/event.cpp.o"
+  "CMakeFiles/moukey.dir/src/moukey.cpp.o"
   "CMakeFiles/moukey.dir/src/server.cpp.o"
   "CMakeFiles/moukey.dir/src/virtual_device.cpp.o"
   "libmoukey.a"

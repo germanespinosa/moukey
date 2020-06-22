@@ -12,7 +12,7 @@ add_library(moukey
         src/device_pool.cpp
         src/server.cpp
         src/client.cpp
-        src/virtual_device.cpp)
+        src/virtual_device.cpp src/moukey.cpp include/moukey.h)
 
 find_package(PkgConfig REQUIRED)
 

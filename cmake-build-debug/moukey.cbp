@@ -388,6 +388,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/german/moukey/include/moukey.h">
+			<Option target="moukey"/>
+		</Unit>
 		<Unit filename="/home/german/moukey/src/client.cpp">
 			<Option target="moukey"/>
 		</Unit>
@@ -416,6 +419,9 @@
 			<Option target="moukey_v"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/event.cpp">
+			<Option target="moukey"/>
+		</Unit>
+		<Unit filename="/home/german/moukey/src/moukey.cpp">
 			<Option target="moukey"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/server.cpp">

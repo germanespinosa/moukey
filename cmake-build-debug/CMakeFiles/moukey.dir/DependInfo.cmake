@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/german/moukey/src/device.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/device.cpp.o"
   "/home/german/moukey/src/device_pool.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/device_pool.cpp.o"
   "/home/german/moukey/src/event.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/event.cpp.o"
+  "/home/german/moukey/src/moukey.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/moukey.cpp.o"
   "/home/german/moukey/src/server.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/server.cpp.o"
   "/home/german/moukey/src/virtual_device.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/virtual_device.cpp.o"
   )

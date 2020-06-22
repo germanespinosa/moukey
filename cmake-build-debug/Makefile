@@ -471,6 +471,33 @@ src/event.cpp.s:
 	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/event.cpp.s
 .PHONY : src/event.cpp.s
 
+src/moukey.o: src/moukey.cpp.o
+
+.PHONY : src/moukey.o
+
+# target to build an object file
+src/moukey.cpp.o:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/moukey.cpp.o
+.PHONY : src/moukey.cpp.o
+
+src/moukey.i: src/moukey.cpp.i
+
+.PHONY : src/moukey.i
+
+# target to preprocess a source file
+src/moukey.cpp.i:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/moukey.cpp.i
+.PHONY : src/moukey.cpp.i
+
+src/moukey.s: src/moukey.cpp.s
+
+.PHONY : src/moukey.s
+
+# target to generate assembly for a file
+src/moukey.cpp.s:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/moukey.cpp.s
+.PHONY : src/moukey.cpp.s
+
 src/server.o: src/server.cpp.o
 
 .PHONY : src/server.o
@@ -573,6 +600,9 @@ help:
 	@echo "... src/event.o"
 	@echo "... src/event.i"
 	@echo "... src/event.s"
+	@echo "... src/moukey.o"
+	@echo "... src/moukey.i"
+	@echo "... src/moukey.s"
 	@echo "... src/server.o"
 	@echo "... src/server.i"
 	@echo "... src/server.s"

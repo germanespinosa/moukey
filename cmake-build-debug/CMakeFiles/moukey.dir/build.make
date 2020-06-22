@@ -135,6 +135,19 @@ CMakeFiles/moukey.dir/src/virtual_device.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/moukey.dir/src/virtual_device.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/german/moukey/src/virtual_device.cpp -o CMakeFiles/moukey.dir/src/virtual_device.cpp.s
 
+CMakeFiles/moukey.dir/src/moukey.cpp.o: CMakeFiles/moukey.dir/flags.make
+CMakeFiles/moukey.dir/src/moukey.cpp.o: ../src/moukey.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/german/moukey/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/moukey.dir/src/moukey.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/moukey.dir/src/moukey.cpp.o -c /home/german/moukey/src/moukey.cpp
+
+CMakeFiles/moukey.dir/src/moukey.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/moukey.dir/src/moukey.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/german/moukey/src/moukey.cpp > CMakeFiles/moukey.dir/src/moukey.cpp.i
+
+CMakeFiles/moukey.dir/src/moukey.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/moukey.dir/src/moukey.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/german/moukey/src/moukey.cpp -o CMakeFiles/moukey.dir/src/moukey.cpp.s
+
 # Object files for target moukey
 moukey_OBJECTS = \
 "CMakeFiles/moukey.dir/src/event.cpp.o" \
@@ -142,7 +155,8 @@ moukey_OBJECTS = \
 "CMakeFiles/moukey.dir/src/device_pool.cpp.o" \
 "CMakeFiles/moukey.dir/src/server.cpp.o" \
 "CMakeFiles/moukey.dir/src/client.cpp.o" \
-"CMakeFiles/moukey.dir/src/virtual_device.cpp.o"
+"CMakeFiles/moukey.dir/src/virtual_device.cpp.o" \
+"CMakeFiles/moukey.dir/src/moukey.cpp.o"
 
 # External object files for target moukey
 moukey_EXTERNAL_OBJECTS =
@@ -153,9 +167,10 @@ libmoukey.a: CMakeFiles/moukey.dir/src/device_pool.cpp.o
 libmoukey.a: CMakeFiles/moukey.dir/src/server.cpp.o
 libmoukey.a: CMakeFiles/moukey.dir/src/client.cpp.o
 libmoukey.a: CMakeFiles/moukey.dir/src/virtual_device.cpp.o
+libmoukey.a: CMakeFiles/moukey.dir/src/moukey.cpp.o
 libmoukey.a: CMakeFiles/moukey.dir/build.make
 libmoukey.a: CMakeFiles/moukey.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/german/moukey/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libmoukey.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/german/moukey/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libmoukey.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/moukey.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/moukey.dir/link.txt --verbose=$(VERBOSE)
 
