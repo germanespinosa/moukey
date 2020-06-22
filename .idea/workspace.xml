@@ -21,6 +21,7 @@
     <list default="true" id="bd2bfc81-edae-4b4b-a101-17f0e88e2e1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/install_core.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/install_core.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1592836766017</updated>
       <workItem from="1592836772348" duration="12480000" />
-      <workItem from="1592850795819" duration="2372000" />
+      <workItem from="1592850795819" duration="3007000" />
     </task>
     <servers />
   </component>
