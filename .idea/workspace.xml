@@ -19,6 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd2bfc81-edae-4b4b-a101-17f0e88e2e1a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/moukey_install_core" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_install_core" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +117,7 @@
       <option name="presentableId" value="Default" />
       <updated>1592836766017</updated>
       <workItem from="1592836772348" duration="12480000" />
-      <workItem from="1592850795819" duration="4884000" />
+      <workItem from="1592850795819" duration="5015000" />
     </task>
     <servers />
   </component>
