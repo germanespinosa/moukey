@@ -27,7 +27,6 @@ moukey -l
 echo "a: All"
 read -p "Select devices: " device_numbers
 device_names=$(get_device_names $device_numbers 2>/dev/null)
-echo "$device_names"
 read -p "Select port[4749]: " port
 if [ "$port" == "" ]; then
   port="4749"
@@ -49,6 +48,4 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 sudo echo "$user" > $DIR/moukey.cfg
 sudo echo "$port $device_names" >> $DIR/moukey.cfg
 
-echo "configuration file saved"
-
-moukey_run &
+echo "configuration file saved. run moukey_run to start moukey"
