@@ -26,8 +26,8 @@ echo "------------------------------------------"
 moukey -l
 echo "a: All"
 read -p "Select devices: " device_numbers
-device_names=$(get_device_names $device_numbers)
-
+device_names=$(get_device_names $device_numbers 2>/dev/null)
+echo "$device_names"
 read -p "Select port[4749]: " port
 if [ "$port" == "" ]; then
   port="4749"
