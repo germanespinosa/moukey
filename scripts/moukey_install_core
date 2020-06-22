@@ -11,3 +11,5 @@ cd build
 cmake ..
 make
 make install
+sudo chmod +x /usr/local/bin/moukey_register_server
+sudo chmod +x /usr/local/bin/moukey_register_client
