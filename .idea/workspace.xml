@@ -19,38 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd2bfc81-edae-4b4b-a101-17f0e88e2e1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/moukey_server" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_c.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_c.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_d.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_d.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_l.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_l.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/src/moukey.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_lib.dir/src/moukey.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_s.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_s.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_t.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_t.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_v.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/moukey_v.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/install_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/install_manifest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libmoukey_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libmoukey_lib.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_l" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_l" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_s" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/moukey_t" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/moukey_t" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/moukey_install_core" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_core" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/moukey_register_client" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_client" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/moukey_register_server" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_register" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moukey.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/moukey.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/moukey_core" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_install" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +117,7 @@
       <updated>1592836766017</updated>
       <workItem from="1592836772348" duration="12480000" />
       <workItem from="1592850795819" duration="12172000" />
-      <workItem from="1592866985057" duration="185000" />
+      <workItem from="1592866985057" duration="272000" />
     </task>
     <servers />
   </component>
