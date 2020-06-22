@@ -11,7 +11,7 @@ if [ "$1" == "" ]; then
   DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
   file="$DIR/moukey.cfg"
 fi
-user=$(cat $1 |tail -n 1)
-params=$(cat $1 |head -n 1)
+user=$(cat $1 |head -n 1)
+params=$(cat $1 |tail -n 1)
 
 sudo -H -u $user moukey $params
