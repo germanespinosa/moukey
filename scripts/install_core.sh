@@ -9,4 +9,5 @@ cd moukey
 mkdir build
 cd build
 cmake ..
+make
 make install
