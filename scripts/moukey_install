@@ -11,7 +11,7 @@ cd moukey
 mkdir build
 cd build
 echo "creating make files..."
-cmake ..
+cmake .. >/dev/null
 echo "building binaries..."
 make > /dev/null
 echo "installing..."
