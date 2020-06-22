@@ -1,13 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/moukey.dir/src/client.cpp.o"
-  "CMakeFiles/moukey.dir/src/device.cpp.o"
-  "CMakeFiles/moukey.dir/src/device_pool.cpp.o"
-  "CMakeFiles/moukey.dir/src/event.cpp.o"
-  "CMakeFiles/moukey.dir/src/moukey.cpp.o"
-  "CMakeFiles/moukey.dir/src/server.cpp.o"
-  "CMakeFiles/moukey.dir/src/virtual_device.cpp.o"
-  "libmoukey.a"
-  "libmoukey.pdb"
+  "CMakeFiles/moukey.dir/main.cpp.o"
+  "moukey"
+  "moukey.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

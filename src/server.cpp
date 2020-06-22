@@ -3,6 +3,7 @@
 #include <sys/socket.h>
 #include <iostream>
 #include <server.h>
+#include <mutex>
 
 using namespace std;
 
@@ -33,6 +34,7 @@ namespace moukey {
         if (active_connection>=0){
             ssize_t l = 0;
             try {
+                mutex mtx;
                 l = send(connections[active_connection], (void *) &event.event, sizeof(input_event), 0);
             } catch (int e){
                 l = 0;

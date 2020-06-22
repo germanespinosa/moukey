@@ -27,6 +27,56 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="moukey">
+				<Option output="/home/german/moukey/cmake-build-debug/moukey" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/german/moukey/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libevdev-1.0"/>
+					<Add directory="/home/german/moukey/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 moukey"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="moukey/fast">
+				<Option output="/home/german/moukey/cmake-build-debug/moukey" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/german/moukey/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libevdev-1.0"/>
+					<Add directory="/home/german/moukey/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 moukey/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="moukey_v">
 				<Option output="/home/german/moukey/cmake-build-debug/moukey_v" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/german/moukey/cmake-build-debug"/>
@@ -127,8 +177,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="moukey">
-				<Option output="/home/german/moukey/cmake-build-debug/libmoukey.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="moukey_lib">
+				<Option output="/home/german/moukey/cmake-build-debug/libmoukey_lib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/german/moukey/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -146,14 +196,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 moukey"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 moukey_lib"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="moukey/fast">
-				<Option output="/home/german/moukey/cmake-build-debug/libmoukey.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="moukey_lib/fast">
+				<Option output="/home/german/moukey/cmake-build-debug/libmoukey_lib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/german/moukey/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -171,7 +221,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 moukey/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 moukey_lib/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/german/moukey/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -389,13 +439,16 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/german/moukey/include/moukey.h">
+			<Option target="moukey_lib"/>
+		</Unit>
+		<Unit filename="/home/german/moukey/main.cpp">
 			<Option target="moukey"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/client.cpp">
-			<Option target="moukey"/>
+			<Option target="moukey_lib"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/device.cpp">
-			<Option target="moukey"/>
+			<Option target="moukey_lib"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/device_client.cpp">
 			<Option target="moukey_c"/>
@@ -407,7 +460,7 @@
 			<Option target="moukey_l"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/device_pool.cpp">
-			<Option target="moukey"/>
+			<Option target="moukey_lib"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/device_server.cpp">
 			<Option target="moukey_s"/>
@@ -419,17 +472,17 @@
 			<Option target="moukey_v"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/event.cpp">
-			<Option target="moukey"/>
+			<Option target="moukey_lib"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/moukey.cpp">
-			<Option target="moukey"/>
+			<Option target="moukey_lib"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/server.cpp">
-			<Option target="moukey"/>
+			<Option target="moukey_lib"/>
 			<Option target="moukey_d"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/src/virtual_device.cpp">
-			<Option target="moukey"/>
+			<Option target="moukey_lib"/>
 		</Unit>
 		<Unit filename="/home/german/moukey/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

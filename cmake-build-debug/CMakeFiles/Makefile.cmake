@@ -51,9 +51,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/moukey.dir/DependInfo.cmake"
   "CMakeFiles/moukey_v.dir/DependInfo.cmake"
   "CMakeFiles/moukey_c.dir/DependInfo.cmake"
-  "CMakeFiles/moukey.dir/DependInfo.cmake"
+  "CMakeFiles/moukey_lib.dir/DependInfo.cmake"
   "CMakeFiles/moukey_l.dir/DependInfo.cmake"
   "CMakeFiles/moukey_s.dir/DependInfo.cmake"
   "CMakeFiles/moukey_d.dir/DependInfo.cmake"

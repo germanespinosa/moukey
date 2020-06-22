@@ -1,4 +1,4 @@
-#include <device_pool.h>
+#include <moukey.h>
 #include <iostream>
 
 using namespace std;
@@ -6,10 +6,17 @@ using namespace moukey;
 
 
 int main(int argc, char** args) {
-    Device_pool dp;
-    dp.init();
-    if (argc>1){
-        cout << dp.devices[stoi(args[1])].name() << endl;
-    } else
-        dp.list_devices();
+    switch (argc){
+        case 1:
+            device_list();
+            break;
+        case 2:
+            device_list((unsigned int)stoi(args[1]));
+            break;
+        default:
+            //error
+            cerr << "wrong parameters" << endl;
+            exit(1);
+    }
+
 }

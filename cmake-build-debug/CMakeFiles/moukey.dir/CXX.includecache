@@ -6,12 +6,62 @@
 
 #IncludeRegexTransform: 
 
+../include/client.h
+event.h
+-
+netinet/in.h
+-
+string
+-
+vector
+-
+
+../include/device.h
+event.h
+-
+libevdev/libevdev.h
+-
+string
+-
+vector
+-
+
+../include/device_pool.h
+device.h
+-
+string
+-
+vector
+-
+
 ../include/event.h
 libevdev/libevdev.h
 -
 string
 -
 vector
+-
+
+../include/moukey.h
+device_pool.h
+-
+virtual_device.h
+-
+server.h
+-
+client.h
+-
+
+../include/server.h
+event.h
+-
+netinet/in.h
+-
+string
+-
+vector
+-
+thread
 -
 
 ../include/virtual_device.h
@@ -26,12 +76,10 @@ string
 vector
 -
 
-/home/german/moukey/src/virtual_device.cpp
-virtual_device.h
+/home/german/moukey/main.cpp
+moukey.h
 -
 iostream
--
-fcntl.h
 -
 
 /usr/include/libevdev-1.0/libevdev/libevdev-uinput.h

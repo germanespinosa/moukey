@@ -79,7 +79,7 @@ moukey_v_EXTERNAL_OBJECTS =
 
 moukey_v: CMakeFiles/moukey_v.dir/src/device_vd_test.cpp.o
 moukey_v: CMakeFiles/moukey_v.dir/build.make
-moukey_v: libmoukey.a
+moukey_v: libmoukey_lib.a
 moukey_v: CMakeFiles/moukey_v.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/german/moukey/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable moukey_v"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/moukey_v.dir/link.txt --verbose=$(VERBOSE)

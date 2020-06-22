@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named moukey
+
+# Build rule for target.
+moukey: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moukey
+.PHONY : moukey
+
+# fast build rule for target.
+moukey/fast:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/build
+.PHONY : moukey/fast
+
+#=============================================================================
 # Target rules for targets named moukey_v
 
 # Build rule for target.
@@ -137,17 +150,17 @@ moukey_c/fast:
 .PHONY : moukey_c/fast
 
 #=============================================================================
-# Target rules for targets named moukey
+# Target rules for targets named moukey_lib
 
 # Build rule for target.
-moukey: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey
-.PHONY : moukey
+moukey_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moukey_lib
+.PHONY : moukey_lib
 
 # fast build rule for target.
-moukey/fast:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/build
-.PHONY : moukey/fast
+moukey_lib/fast:
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/build
+.PHONY : moukey_lib/fast
 
 #=============================================================================
 # Target rules for targets named moukey_l
@@ -201,13 +214,40 @@ moukey_t/fast:
 	$(MAKE) -f CMakeFiles/moukey_t.dir/build.make CMakeFiles/moukey_t.dir/build
 .PHONY : moukey_t/fast
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 src/client.o: src/client.cpp.o
 
 .PHONY : src/client.o
 
 # target to build an object file
 src/client.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/client.cpp.o
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/client.cpp.o
 .PHONY : src/client.cpp.o
 
 src/client.i: src/client.cpp.i
@@ -216,7 +256,7 @@ src/client.i: src/client.cpp.i
 
 # target to preprocess a source file
 src/client.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/client.cpp.i
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/client.cpp.i
 .PHONY : src/client.cpp.i
 
 src/client.s: src/client.cpp.s
@@ -225,7 +265,7 @@ src/client.s: src/client.cpp.s
 
 # target to generate assembly for a file
 src/client.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/client.cpp.s
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/client.cpp.s
 .PHONY : src/client.cpp.s
 
 src/device.o: src/device.cpp.o
@@ -234,7 +274,7 @@ src/device.o: src/device.cpp.o
 
 # target to build an object file
 src/device.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/device.cpp.o
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/device.cpp.o
 .PHONY : src/device.cpp.o
 
 src/device.i: src/device.cpp.i
@@ -243,7 +283,7 @@ src/device.i: src/device.cpp.i
 
 # target to preprocess a source file
 src/device.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/device.cpp.i
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/device.cpp.i
 .PHONY : src/device.cpp.i
 
 src/device.s: src/device.cpp.s
@@ -252,7 +292,7 @@ src/device.s: src/device.cpp.s
 
 # target to generate assembly for a file
 src/device.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/device.cpp.s
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/device.cpp.s
 .PHONY : src/device.cpp.s
 
 src/device_client.o: src/device_client.cpp.o
@@ -342,7 +382,7 @@ src/device_pool.o: src/device_pool.cpp.o
 
 # target to build an object file
 src/device_pool.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/device_pool.cpp.o
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/device_pool.cpp.o
 .PHONY : src/device_pool.cpp.o
 
 src/device_pool.i: src/device_pool.cpp.i
@@ -351,7 +391,7 @@ src/device_pool.i: src/device_pool.cpp.i
 
 # target to preprocess a source file
 src/device_pool.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/device_pool.cpp.i
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/device_pool.cpp.i
 .PHONY : src/device_pool.cpp.i
 
 src/device_pool.s: src/device_pool.cpp.s
@@ -360,7 +400,7 @@ src/device_pool.s: src/device_pool.cpp.s
 
 # target to generate assembly for a file
 src/device_pool.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/device_pool.cpp.s
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/device_pool.cpp.s
 .PHONY : src/device_pool.cpp.s
 
 src/device_server.o: src/device_server.cpp.o
@@ -450,7 +490,7 @@ src/event.o: src/event.cpp.o
 
 # target to build an object file
 src/event.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/event.cpp.o
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/event.cpp.o
 .PHONY : src/event.cpp.o
 
 src/event.i: src/event.cpp.i
@@ -459,7 +499,7 @@ src/event.i: src/event.cpp.i
 
 # target to preprocess a source file
 src/event.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/event.cpp.i
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/event.cpp.i
 .PHONY : src/event.cpp.i
 
 src/event.s: src/event.cpp.s
@@ -468,7 +508,7 @@ src/event.s: src/event.cpp.s
 
 # target to generate assembly for a file
 src/event.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/event.cpp.s
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/event.cpp.s
 .PHONY : src/event.cpp.s
 
 src/moukey.o: src/moukey.cpp.o
@@ -477,7 +517,7 @@ src/moukey.o: src/moukey.cpp.o
 
 # target to build an object file
 src/moukey.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/moukey.cpp.o
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/moukey.cpp.o
 .PHONY : src/moukey.cpp.o
 
 src/moukey.i: src/moukey.cpp.i
@@ -486,7 +526,7 @@ src/moukey.i: src/moukey.cpp.i
 
 # target to preprocess a source file
 src/moukey.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/moukey.cpp.i
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/moukey.cpp.i
 .PHONY : src/moukey.cpp.i
 
 src/moukey.s: src/moukey.cpp.s
@@ -495,7 +535,7 @@ src/moukey.s: src/moukey.cpp.s
 
 # target to generate assembly for a file
 src/moukey.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/moukey.cpp.s
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/moukey.cpp.s
 .PHONY : src/moukey.cpp.s
 
 src/server.o: src/server.cpp.o
@@ -504,7 +544,7 @@ src/server.o: src/server.cpp.o
 
 # target to build an object file
 src/server.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/server.cpp.o
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/server.cpp.o
 	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/server.cpp.o
 .PHONY : src/server.cpp.o
 
@@ -514,7 +554,7 @@ src/server.i: src/server.cpp.i
 
 # target to preprocess a source file
 src/server.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/server.cpp.i
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/server.cpp.i
 	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/server.cpp.i
 .PHONY : src/server.cpp.i
 
@@ -524,7 +564,7 @@ src/server.s: src/server.cpp.s
 
 # target to generate assembly for a file
 src/server.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/server.cpp.s
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/server.cpp.s
 	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/server.cpp.s
 .PHONY : src/server.cpp.s
 
@@ -534,7 +574,7 @@ src/virtual_device.o: src/virtual_device.cpp.o
 
 # target to build an object file
 src/virtual_device.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/virtual_device.cpp.o
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/virtual_device.cpp.o
 .PHONY : src/virtual_device.cpp.o
 
 src/virtual_device.i: src/virtual_device.cpp.i
@@ -543,7 +583,7 @@ src/virtual_device.i: src/virtual_device.cpp.i
 
 # target to preprocess a source file
 src/virtual_device.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/virtual_device.cpp.i
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/virtual_device.cpp.i
 .PHONY : src/virtual_device.cpp.i
 
 src/virtual_device.s: src/virtual_device.cpp.s
@@ -552,7 +592,7 @@ src/virtual_device.s: src/virtual_device.cpp.s
 
 # target to generate assembly for a file
 src/virtual_device.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/src/virtual_device.cpp.s
+	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/virtual_device.cpp.s
 .PHONY : src/virtual_device.cpp.s
 
 # Help Target
@@ -562,14 +602,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... moukey"
 	@echo "... moukey_v"
 	@echo "... moukey_c"
-	@echo "... moukey"
+	@echo "... moukey_lib"
 	@echo "... edit_cache"
 	@echo "... moukey_l"
 	@echo "... moukey_s"
 	@echo "... moukey_d"
 	@echo "... moukey_t"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... src/client.o"
 	@echo "... src/client.i"
 	@echo "... src/client.s"

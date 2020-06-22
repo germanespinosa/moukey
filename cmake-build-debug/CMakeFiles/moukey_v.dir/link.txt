@@ -1,1 +1,1 @@
-/usr/bin/c++  -pthread -g   CMakeFiles/moukey_v.dir/src/device_vd_test.cpp.o  -o moukey_v  libmoukey.a -levdev 
+/usr/bin/c++  -pthread -g   CMakeFiles/moukey_v.dir/src/device_vd_test.cpp.o  -o moukey_v  libmoukey_lib.a -levdev 

@@ -3,7 +3,11 @@
 
 CMakeFiles/moukey_c.dir/src/device_client.cpp.o
  ../include/client.h
+ ../include/device.h
+ ../include/device_pool.h
  ../include/event.h
+ ../include/moukey.h
+ ../include/server.h
  ../include/virtual_device.h
  /home/german/moukey/src/device_client.cpp
  /usr/include/libevdev-1.0/libevdev/libevdev-uinput.h

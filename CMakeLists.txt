@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS -pthread)
 set(CMAKE_CXX_STANDARD 14)
 
 
-add_library(moukey
+add_library(moukey_lib
         src/event.cpp
         src/device.cpp
         src/device_pool.cpp
@@ -25,36 +25,43 @@ include_directories(
 add_executable(moukey_l
         src/device_list.cpp)
 
-target_link_libraries(moukey_l moukey
+target_link_libraries(moukey_l moukey_lib
         ${EVDEV_LIBRARIES})
 
 add_executable(moukey_d
         src/device_display.cpp src/server.cpp)
 
-target_link_libraries(moukey_d moukey
+target_link_libraries(moukey_d moukey_lib
         ${EVDEV_LIBRARIES})
 
 add_executable(moukey_t
         src/device_test.cpp)
 
-target_link_libraries(moukey_t moukey
+target_link_libraries(moukey_t moukey_lib
         ${EVDEV_LIBRARIES})
 
 add_executable(moukey_s
         src/device_server.cpp)
 
-target_link_libraries(moukey_s moukey
+target_link_libraries(moukey_s moukey_lib
         ${EVDEV_LIBRARIES})
 
 add_executable(moukey_c
         src/device_client.cpp)
 
-target_link_libraries(moukey_c moukey
+target_link_libraries(moukey_c moukey_lib
         ${EVDEV_LIBRARIES})
 
 add_executable(moukey_v
         src/device_vd_test.cpp)
 
-target_link_libraries(moukey_v moukey
+target_link_libraries(moukey_v moukey_lib
+        ${EVDEV_LIBRARIES})
+
+
+add_executable(moukey
+        main.cpp)
+
+target_link_libraries(moukey moukey_lib
         ${EVDEV_LIBRARIES})
 

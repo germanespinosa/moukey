@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <dirent.h>
 #include <iostream>
+#include <utility>
 
 using namespace std;
 
@@ -26,7 +27,7 @@ namespace moukey{
     }
 
     Device_pool::Device_pool(string device_path):
-        device_path(device_path){
+        device_path(std::move(device_path)){
     }
 
     bool Device_pool::init() {
@@ -45,7 +46,7 @@ namespace moukey{
         return true;
     }
 
-    bool Device_pool::init(std::string device_name) {
+    bool Device_pool::init(const std::string& device_name) {
         struct dirent *entry;
         DIR *dir = opendir(device_path.c_str());
         if (dir == NULL) {
@@ -61,7 +62,7 @@ namespace moukey{
         return true;
     }
 
-    Device &Device_pool::operator[](int index) {
+    Device &Device_pool::operator[](unsigned int index) {
         return devices[index];
     }
 }

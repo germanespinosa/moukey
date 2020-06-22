@@ -4,13 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/german/moukey/src/client.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/client.cpp.o"
-  "/home/german/moukey/src/device.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/device.cpp.o"
-  "/home/german/moukey/src/device_pool.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/device_pool.cpp.o"
-  "/home/german/moukey/src/event.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/event.cpp.o"
-  "/home/german/moukey/src/moukey.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/moukey.cpp.o"
-  "/home/german/moukey/src/server.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/server.cpp.o"
-  "/home/german/moukey/src/virtual_device.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/src/virtual_device.cpp.o"
+  "/home/german/moukey/main.cpp" "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -22,6 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/german/moukey/cmake-build-debug/CMakeFiles/moukey_lib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
