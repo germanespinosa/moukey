@@ -76,6 +76,7 @@ namespace moukey{
                 return false;
             }
         }
+        return true;
     }
 
     void Device::release() {
