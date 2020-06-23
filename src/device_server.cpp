@@ -1,13 +1,9 @@
 #include <server.h>
 #include <moukey.h>
 #include <iostream>
-#include <thread>
-#include <chrono>
-
 
 using namespace std;
 using namespace moukey;
-
 
 int main(int argc, char** args) {
     if (argc<3){

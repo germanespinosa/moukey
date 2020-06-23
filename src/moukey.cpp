@@ -28,10 +28,13 @@ namespace moukey{
     }
 
     void receive_event(Client &client, Virtual_device &vd){
+        cout << "waiting for events" << endl;
         while (client.wait_for_event()) {
             cout << client.event << endl;
             vd.dispatch(client.event);
         }
+        cout << "connection closed" << endl;
+        exit(1);
     }
 // end thread handlers
 

@@ -68,9 +68,15 @@ namespace moukey{
 
     bool Device::wait_for_event() {
         int rc = 0;
+        input_event ev{};
         while (listening) {
-            rc = libevdev_next_event(handler, LIBEVDEV_READ_FLAG_NORMAL, &event.event);
-            if (rc == 0) return true;
+            rc = libevdev_next_event(handler, LIBEVDEV_READ_FLAG_NORMAL, &ev);
+            if (rc == 0) {
+                event.event_data.type = ev.type;
+                event.event_data.code = ev.code;
+                event.event_data.value = ev.value;
+                return true;
+            }
             if (!(rc == 1 || rc == 0 || rc == -EAGAIN)) {
                 release();
                 return false;

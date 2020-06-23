@@ -27,13 +27,15 @@ namespace moukey {
     bool Client::wait_for_event() {
         while (listening){
             try{
-                int res = read(fd, &event.event, sizeof(input_event));
-                if (res == sizeof(input_event)){
+                int res = read(fd, &event.event_data, sizeof(Event_data));
+                if (res == sizeof(Event_data)){
                     return true;
                 }
+                cerr << "wrong message size :" << res << " expected " << sizeof(Event_data) << endl;
                 return false;
             }
             catch (int e){
+                cerr << "error receiving message:" << e << endl;
                 return false;
             }
         }

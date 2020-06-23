@@ -27,7 +27,7 @@ namespace moukey {
     }
 
     void Virtual_device::dispatch(const Event &event) {
-        libevdev_uinput_write_event(uidev, event.event.type, event.event.code, event.event.value);
+        libevdev_uinput_write_event(uidev, event.event_data.type, event.event_data.code, event.event_data.value);
     }
 
     void Virtual_device::stop() {

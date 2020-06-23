@@ -35,7 +35,7 @@ namespace moukey {
             ssize_t l = 0;
             try {
                 mutex mtx;
-                l = send(connections[active_connection], (void *) &event.event, sizeof(input_event), 0);
+                l = send(connections[active_connection], (void *) &event.event_data, sizeof(Event_data), 0);
             } catch (int e){
                 l = 0;
             }

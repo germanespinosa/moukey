@@ -83,10 +83,6 @@ moukey.h
 -
 iostream
 -
-thread
--
-chrono
--
 
 /usr/include/libevdev-1.0/libevdev/libevdev-uinput.h
 libevdev/libevdev.h
