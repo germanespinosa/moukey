@@ -77,5 +77,5 @@ install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/mouke
 install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/moukey_register)")
 install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/moukey_server)")
 install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/moukey_client)")
-install(CODE "execute_process(COMMAND echo \"echo \"${CMAKE_INSTALL_PREFIX}/bin\"\" >> ${CMAKE_INSTALL_PREFIX}/bin/moukey_location)")
+install(CODE "execute_process(COMMAND echo \"echo ${CMAKE_INSTALL_PREFIX}/bin\" >> ${CMAKE_INSTALL_PREFIX}/bin/moukey_location)")
 install(CODE "execute_process(COMMAND chmod +x ${CMAKE_INSTALL_PREFIX}/bin/moukey_location)")
