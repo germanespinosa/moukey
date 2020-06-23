@@ -1,5 +1,5 @@
 #!/bin/bash
-#curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/germanespinosa/moukey/master/scripts/install_core.sh | sudo bash
+#curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/germanespinosa/moukey/master/scripts/moukey_install.sh | sudo bash
 
 echo "installing prerequisites..."
 sudo apt-get install cmake git libevdev-dev -y >/dev/null
