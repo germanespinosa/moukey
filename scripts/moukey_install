@@ -16,6 +16,4 @@ echo "building binaries..."
 make > /dev/null
 echo "installing..."
 make install > /dev/null
-sudo chmod +777 /usr/local/bin/moukey_register_server
-sudo chmod +777 /usr/local/bin/moukey_register_client
 echo "installation complete"

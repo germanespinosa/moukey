@@ -14,7 +14,7 @@ echo "------------------------------------------"
 if [ "$1" == "remove" ]; then
   cmd=""
 else
-  cmd="moukey_run $DIR/moukey.cfg &"
+  cmd="moukey_run &"
 fi
 
 input="/etc/rc.local"
