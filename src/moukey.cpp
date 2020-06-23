@@ -130,8 +130,14 @@ namespace moukey{
         Server server;
         server.start(port);
         vector<thread> threads;
+        Event_data modifier{};
+        modifier.type = 1;
+        modifier.code = 125;
+        Event_data trigger{};
+        trigger.type = 1;
+        trigger.code = 41;
         for (auto &device: dp.devices)
-            threads.emplace_back(process_device_events, ref(dp[0]), ref(server));
+            threads.emplace_back(process_device_events, ref(dp[0]), ref(server), ref(modifier), ref(trigger));
 
         if (duration<=0) while(true);
         this_thread::sleep_for(chrono::milliseconds(duration*1000) );
