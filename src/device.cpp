@@ -1,8 +1,8 @@
 #include <device_pool.h>
-#include <string>
 #include <fcntl.h>
 #include <dirent.h>
 #include <iostream>
+#include <util.h>
 
 using namespace std;
 
@@ -14,15 +14,28 @@ namespace moukey{
     {
         int fd;
         int rc = 1;
+        LOG("opening device at "+ path);
         fd = open(path.c_str(), O_RDONLY|O_NONBLOCK);
-        if (fd==0) return false;
+        if (fd==0) {
+            cerr << "failed to open device at " << path << endl;
+            return false;
+        }
+        LOG("successfully opened " + path);
+        LOG("creating livevdev handler");
         rc = libevdev_new_from_fd(fd, &handler);
-        if (rc < 0) return false;
+        if (rc < 0) {
+            cerr << "failed to create livev handler" <<  endl;
+            return false;
+        }
+        LOG("successfully created livevdev handler");
+        LOG("querying supported events");
         for (int i = 0; i <= EV_MAX; i++) {
             if (libevdev_has_event_type(handler, i)) {
+                LOG("supported event found");
                 supported_events.push_back(i);
             }
         }
+        LOG("finished querying supported events");
         return true;
     }
 

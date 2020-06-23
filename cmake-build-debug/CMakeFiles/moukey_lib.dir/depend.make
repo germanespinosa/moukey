@@ -9,6 +9,7 @@ CMakeFiles/moukey_lib.dir/src/client.cpp.o: /usr/include/libevdev-1.0/libevdev/l
 CMakeFiles/moukey_lib.dir/src/device.cpp.o: ../include/device.h
 CMakeFiles/moukey_lib.dir/src/device.cpp.o: ../include/device_pool.h
 CMakeFiles/moukey_lib.dir/src/device.cpp.o: ../include/event.h
+CMakeFiles/moukey_lib.dir/src/device.cpp.o: ../include/util.h
 CMakeFiles/moukey_lib.dir/src/device.cpp.o: ../src/device.cpp
 CMakeFiles/moukey_lib.dir/src/device.cpp.o: /usr/include/libevdev-1.0/libevdev/libevdev.h
 
@@ -28,6 +29,7 @@ CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: ../include/device_pool.h
 CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: ../include/event.h
 CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: ../include/moukey.h
 CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: ../include/server.h
+CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: ../include/util.h
 CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: ../include/virtual_device.h
 CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: ../src/moukey.cpp
 CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: /usr/include/libevdev-1.0/libevdev/libevdev-uinput.h

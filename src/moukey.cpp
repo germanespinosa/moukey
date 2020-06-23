@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cinttypes>
 #include <sys/stat.h>
+#include <util.h>
 
 using namespace std;
 
@@ -23,32 +24,32 @@ namespace moukey{
                 && modifier.code == device.event.data.code) {
                 if (device.event.data.value < 2) {
                     modifier_on = device.event.data.value;
-                    cout << "modifier: " << (modifier_on?"on":"off") << endl;
+                    LOG(string("modifier: ") + (modifier_on?"on":"off"));
                 }
             }
             if (modifier_on
                 && trigger.type == device.event.data.type
                 && trigger.code == device.event.data.code
                 && device.event.data.value ) {
-                cout << "switching connection" << endl;
+                LOG ("switching connection");
                 server.next_connection();
             } else {
                 if (server.dispatch(device.event)) {
-                    cout << " - Success" << endl;
+                    LOG("event dispatch success");
                 } else {
-                    cout << " - Failed" << endl;
+                    LOG("event dispatch fail");
                 }
             }
         }
     }
 
     void receive_event(Client &client, Virtual_device &vd){
-        cout << "waiting for events" << endl;
+        LOG("waiting for events");
         while (client.wait_for_event()) {
-            cout << client.event << endl;
+            LOG(client.event);
             vd.dispatch(client.event);
         }
-        cout << "connection closed" << endl;
+        LOG("connection closed");
         exit(1);
     }
 // end thread handlers
@@ -63,7 +64,7 @@ namespace moukey{
         Device_pool dp;
         dp.init();
         if (device_ind< dp.devices.size())
-            cout << dp[device_ind].name() << endl;
+            LOG(dp[device_ind].name());
         else {
             cerr << "Device not found" << endl;
             exit(1);
@@ -74,6 +75,7 @@ namespace moukey{
         Device_pool dp;
         dp.init(device_name);
         if (dp.devices.empty()) {
+            cerr << "Failed to init " << device_name << endl;
             exit(1);
         }
         cout << dp[0];
@@ -88,6 +90,7 @@ namespace moukey{
         unsigned int size = 0;
         dp.init(device_name);
         if (dp.devices.empty()) {
+            cerr << "Failed to init " << device_name << endl;
             exit(1);
         }
         cout << dp[size] << endl;
@@ -99,6 +102,7 @@ namespace moukey{
         for (auto &device_name: device_names) {
             dp.init(device_name);
             if (dp.devices.size() == size) {
+                cerr << "Failed to init " << device_name << endl;
                 exit(1);
             }
             cout << dp[size] << endl;
@@ -128,6 +132,7 @@ namespace moukey{
             for (auto &dn:device_names)
                 dp.init(dn);
             if (dp.devices.size() != device_names.size())
+                cerr << "Failed to init devices" << endl;
                 exit(1);
         }
         Server server;

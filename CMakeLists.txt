@@ -25,6 +25,8 @@ include_directories(
 
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
+    add_definitions(-DVERBOSE=1)
+
     add_executable(moukey_l
             src/device_list.cpp)
 
@@ -63,7 +65,7 @@ if (CMAKE_BUILD_TYPE MATCHES Debug)
 endif()
 
 add_executable(moukey
-        main.cpp)
+        main.cpp include/util.h)
 
 target_link_libraries(moukey moukey_lib
         ${EVDEV_LIBRARIES})

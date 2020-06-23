@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS = -pthread -g   -std=gnu++14
 
-CXX_DEFINES = 
+CXX_DEFINES = -DVERBOSE=1
 
 CXX_INCLUDES = -I/usr/include/libevdev-1.0 -I/home/german/moukey/include 
 

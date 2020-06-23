@@ -2,12 +2,14 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-
+#include <util.h>
 
 using namespace std;
 using namespace moukey;
 
 int main(int argc, char** args) {
+    LOG("HELLO!");
+    exit (0);
     Virtual_device vd;
     Event e;
     if (!vd.init("moukey virtual device")){
