@@ -8,7 +8,7 @@ using namespace std;
 namespace moukey {
 
     std::ostream &operator<<(ostream &out, const Event &e) {
-        out << "type: " << e.type() << "\tcode: " << e.code() << "\tvalue: " << e.value();
+        out << "type: "<< e.data.type << "(" << e.type() << ")\tcode: " << e.data.code << "(" << e.code() << ")\tvalue: " << e.value();
         return out;
     }
 

@@ -82,7 +82,7 @@ namespace moukey{
                 return false;
             }
         }
-        return true;
+        return false;
     }
 
     void Device::release() {
