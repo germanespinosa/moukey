@@ -7,6 +7,34 @@ using namespace std;
 
 namespace moukey{
 
+// thread handlers
+    void print_events(Device &d){
+        d.listen();
+        while (d.wait_for_event()) {
+            cout << d.event << endl;
+        }
+    }
+
+    void process_device_events(Device &device, Server &server){
+        device.listen();
+        while (device.wait_for_event()) {
+            cout << device.event ;
+            if (server.dispatch(device.event)){
+                cout << " - Success" << endl;
+            } else {
+                cout << " - Failed" << endl;
+            }
+        }
+    }
+
+    void receive_event(Client &client, Virtual_device &vd){
+        while (client.wait_for_event()) {
+            cout << client.event << endl;
+            vd.dispatch(client.event);
+        }
+    }
+// end thread handlers
+
     void device_list(){
         Device_pool dp;
         dp.init();
@@ -21,13 +49,6 @@ namespace moukey{
         else {
             cerr << "Device not found" << endl;
             exit(1);
-        }
-    }
-
-    void print_events(Device &d){
-        d.listen();
-        while (d.wait_for_event()) {
-            cout << d.event << endl;
         }
     }
 
@@ -67,24 +88,20 @@ namespace moukey{
         }
     }
 
-    void process_device_events(Device &device, Server &server){
-        device.listen();
-        while (device.wait_for_event()) {
-            cout << device.event << endl;
-            server.dispatch(device.event);
-        }
-    }
     void device_server(int port, int duration) {
         vector<string> device_names;
         device_server(port, device_names,duration);
     }
+
     void device_server(int port) {
         vector<string> device_names;
         device_server(port, device_names,-1);
     }
+
     void device_server(int port, vector<string> device_names) {
         device_server(port, device_names,-1);
     }
+
     void device_server(int port, vector<string> device_names, int duration){
         Device_pool dp;
         if (device_names.empty()){
@@ -108,13 +125,6 @@ namespace moukey{
         for (auto &t:threads)
             t.join();
         server.stop();
-    }
-
-    void receive_event(Client &client, Virtual_device &vd){
-        while (client.wait_for_event()) {
-            cout << client.event << endl;
-            vd.dispatch(client.event);
-        }
     }
 
     void device_client(std::string server_address, int port, int duration){

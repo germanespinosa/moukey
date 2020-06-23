@@ -9,7 +9,7 @@ namespace moukey {
     struct Server {
         Server();
         bool start(int);
-        void dispatch(const Event &);
+        bool dispatch(const Event &);
         void next_connection();
         void previous_connection();
         sockaddr_in address;

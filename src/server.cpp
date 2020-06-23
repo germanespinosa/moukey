@@ -30,7 +30,7 @@ namespace moukey {
         return true;
     }
 
-    void moukey::Server::dispatch(const moukey::Event &event) {
+    bool moukey::Server::dispatch(const moukey::Event &event) {
         if (active_connection>=0){
             ssize_t l = 0;
             try {
@@ -43,8 +43,11 @@ namespace moukey {
                 close(connections[active_connection]);
                 connections.erase(connections.begin() + active_connection);
                 active_connection = -1;
+                return false;
             }
+            return true;
         }
+        return false;
     }
 
     void Server::_server(Server &server) {
