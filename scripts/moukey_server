@@ -37,15 +37,9 @@ if [ "$user" == "" ]; then
   user="root"
 fi
 
-SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do
-  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
-  SOURCE="$(readlink "$SOURCE")"
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-done
-DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+moukey_location=$(moukey_location)
 
-sudo echo "$user" > $DIR/moukey.cfg
-sudo echo "$port $device_names" >> $DIR/moukey.cfg
+sudo echo "$user" > "$moukey_location/moukey.cfg"
+sudo echo "$port $device_names" >> "$moukey_location/moukey.cfg"
 
 echo "configuration file saved. run moukey_run to start moukey"

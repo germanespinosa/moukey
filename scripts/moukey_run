@@ -2,14 +2,7 @@
 
 file=$1
 if [ "$1" == "" ]; then
-  SOURCE="${BASH_SOURCE[0]}"
-  while [ -h "$SOURCE" ]; do
-    DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
-    SOURCE="$(readlink "$SOURCE")"
-    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-  done
-  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
-  file="$DIR/moukey.cfg"
+  file="$(moukey_location)/moukey.cfg"
 fi
 user=$(cat $1 |head -n 1)
 params=$(cat $1 |tail -n 1)
