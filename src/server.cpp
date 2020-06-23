@@ -57,7 +57,7 @@ namespace moukey {
                     new_socket = accept(server.fd, NULL, 0);
                     cout << "new connection" <<  endl;
                     if (new_socket>=0) server.connections.push_back(new_socket);
-                    server.active_connection=0;
+                    server.active_connection = 0;
                 }
             }
             catch (int e){

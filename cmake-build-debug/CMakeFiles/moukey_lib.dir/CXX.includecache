@@ -86,6 +86,20 @@ cinttypes
 sys/stat.h
 -
 
+/home/german/moukey/src/server.cpp
+poll.h
+-
+unistd.h
+-
+sys/socket.h
+-
+iostream
+-
+server.h
+-
+mutex
+-
+
 /usr/include/libevdev-1.0/libevdev/libevdev-uinput.h
 libevdev/libevdev.h
 -

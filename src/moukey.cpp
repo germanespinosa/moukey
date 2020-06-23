@@ -67,10 +67,10 @@ namespace moukey{
         }
     }
 
-
     void process_device_events(Device &device, Server &server){
         device.listen();
         while (device.wait_for_event()) {
+            cout << device.event << endl;
             server.dispatch(device.event);
         }
     }
@@ -112,6 +112,7 @@ namespace moukey{
 
     void receive_event(Client &client, Virtual_device &vd){
         while (client.wait_for_event()) {
+            cout << client.event << endl;
             vd.dispatch(client.event);
         }
     }
@@ -120,10 +121,18 @@ namespace moukey{
         Client client;
         Virtual_device vd;
         if (port==0){
+            cerr << "wrong port" << endl;
             exit(1);
         }
-        vd.init("moukey virtual device");
-        client.init(server_address, port);
+        if (!vd.init("moukey virtual device")){
+            cerr << "failed to create virtual device" << endl;
+            exit(1);
+        }
+        if (!client.init(server_address, port))
+        {
+            cerr << "failed to connect to " << server_address << ":" << port << endl;
+            exit(1);
+        }
         client.listen();
         std::thread t(receive_event, ref(client), ref(vd) );
 
