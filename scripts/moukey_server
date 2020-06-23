@@ -1,4 +1,8 @@
 #!/bin/bash
+if (( $EUID != 0 )); then
+    echo "please run as root"
+    exit
+fi
 
 function get_device_names (){
   if [ "$1" == "a" ]; then

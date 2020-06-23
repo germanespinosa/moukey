@@ -1,4 +1,8 @@
 #!/bin/bash
+if (( $EUID != 0 )); then
+    echo "please run as root"
+    exit
+fi
 
 if [ "$1" != "" ]; then
   echo "echo \"$1\"">> $1/moukey_location
