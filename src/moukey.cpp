@@ -15,13 +15,26 @@ namespace moukey{
         }
     }
 
-    void process_device_events(Device &device, Server &server){
+    void process_device_events(Device &device, Server &server, Event_data &modifier, Event_data &trigger){
+        bool modifier_on = false;
         device.listen();
         while (device.wait_for_event()) {
-            if (server.dispatch(device.event)){
-                cout << " - Success" << endl;
+            if (modifier.type == device.event.data.type
+                && modifier.code == device.event.data.code) {
+                modifier_on = device.event.data.value;
+            }
+            if (modifier_on
+                && trigger.type == device.event.data.type
+                && trigger.code == device.event.data.code
+                && device.event.data.value ) {
+                cout << "switching connection" << endl;
+                server.next_connection();
             } else {
-                cout << " - Failed" << endl;
+                if (server.dispatch(device.event)) {
+                    cout << " - Success" << endl;
+                } else {
+                    cout << " - Failed" << endl;
+                }
             }
         }
     }
