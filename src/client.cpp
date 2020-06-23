@@ -27,7 +27,7 @@ namespace moukey {
     bool Client::wait_for_event() {
         while (listening){
             try{
-                int res = read(fd, &event.event_data, sizeof(Event_data));
+                int res = read(fd, &event.data, sizeof(Event_data));
                 if (res == sizeof(Event_data)){
                     return true;
                 }

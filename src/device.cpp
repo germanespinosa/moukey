@@ -72,9 +72,9 @@ namespace moukey{
         while (listening) {
             rc = libevdev_next_event(handler, LIBEVDEV_READ_FLAG_NORMAL, &ev);
             if (rc == 0) {
-                event.event_data.type = ev.type;
-                event.event_data.code = ev.code;
-                event.event_data.value = ev.value;
+                event.data.type = ev.type;
+                event.data.code = ev.code;
+                event.data.value = ev.value;
                 return true;
             }
             if (!(rc == 1 || rc == 0 || rc == -EAGAIN)) {
