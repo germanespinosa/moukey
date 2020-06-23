@@ -64,6 +64,7 @@ int main(int argc, char** args) {
     }
     if (params["-1"].present()){
         cout << "message size: " << sizeof(Event_data) << endl;
+        exit(0);
     }
     cerr << "wrong parameters" << endl;
     exit(1);
