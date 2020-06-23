@@ -9,8 +9,8 @@ if [ "$1" != "" ]; then
   exit
 fi
 
-echo "Moukey Server 0.1.2020 by German Espinosa "
-echo "------------------------------------------"
+echo "Moukey 0.1.2020 by German Espinosa "
+echo "-----------------------------------"
 
 if [ "$1" == "remove" ]; then
   cmd=""

@@ -1,10 +1,24 @@
 #!/bin/bash
 
+function show_params(){
+  if [ "$1" == "-s" ]; then
+    shift
+    shift
+    for arg in "$@"
+    do
+      echo "Serving $arg"
+    done
+  fi
+}
+
+echo "Moukey 0.1.2020 by German Espinosa "
+echo "-----------------------------------"
+
 file=$1
 if [ "$1" == "" ]; then
   file="$(moukey_location)/moukey.cfg"
 fi
 user=$(cat $1 |head -n 1)
 params=$(cat $1 |tail -n 1)
-
+show_params params
 sudo -H -u $user moukey $params
