@@ -35,6 +35,7 @@ namespace moukey {
             ssize_t l = 0;
             try {
                 mutex mtx;
+                cout << "sending " << sizeof(Event_data) << " bytes" << endl;
                 l = send(connections[active_connection], (void *) &event.event_data, sizeof(Event_data), 0);
             } catch (int e){
                 l = 0;

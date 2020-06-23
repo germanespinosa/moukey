@@ -18,7 +18,6 @@ namespace moukey{
     void process_device_events(Device &device, Server &server){
         device.listen();
         while (device.wait_for_event()) {
-            cout << device.event ;
             if (server.dispatch(device.event)){
                 cout << " - Success" << endl;
             } else {
