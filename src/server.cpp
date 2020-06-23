@@ -40,12 +40,12 @@ namespace moukey {
             } catch (int e){
                 l = 0;
             }
-//            if ( l != sizeof(input_event)){
-//                close(connections[active_connection]);
-//                connections.erase(connections.begin() + active_connection);
-//                active_connection = -1;
-//                return false;
-//            }
+            if ( l != sizeof(Event_data)){
+                close(connections[active_connection]);
+                connections.erase(connections.begin() + active_connection);
+                active_connection = -1;
+                return false;
+            }
             return true;
         }
         return false;
