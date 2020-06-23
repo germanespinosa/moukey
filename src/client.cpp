@@ -28,7 +28,7 @@ namespace moukey {
         while (listening){
             try{
                 int res = read(fd, &event.data, sizeof(Event_data));
-                if (res == sizeof(Event_data)){
+                if (res == sizeof(Event_data)) {
                     return true;
                 }
                 cerr << "wrong message size :" << res << " expected " << sizeof(Event_data) << endl;
