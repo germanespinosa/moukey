@@ -21,7 +21,10 @@ namespace moukey{
         while (device.wait_for_event()) {
             if (modifier.type == device.event.data.type
                 && modifier.code == device.event.data.code) {
-                modifier_on = device.event.data.value;
+                if (device.event.data.value < 2) {
+                    modifier_on = device.event.data.value;
+                    cout << "modifier: " << (modifier_on?"on":"off") << endl;
+                }
             }
             if (modifier_on
                 && trigger.type == device.event.data.type
