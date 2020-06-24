@@ -3,6 +3,7 @@
 #include <cinttypes>
 #include <sys/stat.h>
 #include <util.h>
+#include <mutex>
 
 using namespace std;
 
@@ -15,12 +16,14 @@ namespace moukey{
             cout << d.event << endl;
         }
     }
-
+    mutex mtx2;
     void process_device_events(int16_t device_index, Device_pool &dp, Server &server, Event_data &modifier, Event_data &trigger){
         bool modifier_on = false;
         auto &device = dp[device_index];
         device.listen();
+        mtx2.lock();
         LOG("listening " << device.name() << " on " << device_index);
+        mtx2.unlock();
         while (device.wait_for_event()) {
             LOG ( "event "<< device.event << " for " << device << " " << device.name());
             if (modifier.type == device.event.data.type
