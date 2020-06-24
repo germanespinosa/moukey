@@ -17,13 +17,14 @@ namespace moukey{
         LOG("opening device at "+ path);
         fd = open(path.c_str(), O_RDONLY|O_NONBLOCK);
         if (fd==0) {
-            cerr << "failed to open device at " << path << endl;
+            LOG("failed to open device at " << path );
             return false;
         }
         LOG("successfully opened " + path);
         LOG("creating livevdev handler");
         rc = libevdev_new_from_fd(fd, &handler);
         if (rc < 0) {
+            LOG("failed livevdev handler");
             return false;
         }
         LOG("successfully created livevdev handler");
