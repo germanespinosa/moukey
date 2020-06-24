@@ -11,7 +11,7 @@ if [ "$1" == "remove" ]; then
   cmd=""
 else
   if [ "$1" != "" ]; then
-    echo "$1" > ""$1/moukey_location""
+    echo "echo \"$1\"" > ""$1/moukey_location""
     exit
   fi
   cmd="moukey_run &"
