@@ -31,9 +31,10 @@ namespace moukey {
     }
 
     mutex mtx;
-    bool moukey::Server::dispatch_event(int16_t device, const moukey::Event &event) {
+    bool moukey::Server::dispatch_event(int16_t device_ind, const moukey::Event &event) {
         mtx.lock();
-        if (send_data((void *) &device, sizeof(int16_t))) {
+        LOG ("sending event from device " << device_ind);
+        if (send_data((void *) &device_ind, sizeof(int16_t))) {
             if (send_data((void *) &event.data, sizeof(Event_data))){
                 mtx.unlock();
                 return true;
@@ -89,7 +90,7 @@ namespace moukey {
     bool Server::send_data(int client_fd, const void *data, uint16_t size) {
         ssize_t l = 0;
         try {
-            cout <<"sending " << size << " bytes" << endl;
+            LOG("sending " << size << " bytes");
             l = send(client_fd, data, size, 0);
         } catch (int e){
             l = 0;
