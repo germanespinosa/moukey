@@ -6,20 +6,16 @@ fi
 
 echo "Moukey Client 0.1.2020 by German Espinosa "
 echo "------------------------------------------"
-echo "server ():"
-read -p "Select devices: " device_numbers
-device_names=$(get_device_names $device_numbers 2>/dev/null)
+read -p "server: " server
 read -p "Select port[4749]: " port
 if [ "$port" == "" ]; then
   port="4749"
 fi
-
 read -p "Select port[root]: " user
 if [ "$user" == "" ]; then
   user="root"
 fi
-
 sudo echo "$user" > "$(moukey_location)/moukey.cfg"
-sudo echo "$port $device_names" >> "$(moukey_location)/moukey.cfg"
+sudo echo "$server $port" >> "$(moukey_location)/moukey.cfg"
 
 echo "configuration file saved. run moukey_run to start moukey"
