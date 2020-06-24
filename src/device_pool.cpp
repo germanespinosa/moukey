@@ -1,3 +1,4 @@
+#include <util.h>
 #include <device_pool.h>
 #include <string>
 #include <dirent.h>
@@ -39,6 +40,8 @@ namespace moukey{
             string file_path = device_path + string(entry->d_name);
             Device d(file_path);
             if (d.init()) {
+                d.index = devices.size();
+                LOG("device " << d <<  " found");
                 devices.push_back(d);
                 device_names.push_back(d.name());
             }

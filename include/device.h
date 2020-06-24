@@ -21,6 +21,7 @@ namespace moukey {
         std::string path;
         libevdev *handler;
         Event event;
+        uint16_t index;
         std::vector<int> supported_events;
         bool listening;
         friend std::ostream& operator<<(std::ostream& , const Device& );
