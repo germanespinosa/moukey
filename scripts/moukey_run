@@ -20,4 +20,4 @@ if [ "$1" == "" ]; then
 fi
 user=$(cat $file |head -n 1)
 params=$(cat $file |tail -n 1)
-sudo -H -u $user eval "moukey $params"
+eval "sudo -H -u $user moukey $params"
