@@ -62,6 +62,26 @@ namespace moukey{
         return true;
     }
 
+    bool Device_pool::init(const vector<string>& device_names) {
+        struct dirent *entry;
+        DIR *dir = opendir(device_path.c_str());
+        if (dir == NULL) {
+            return false;
+        }
+        while ((entry = readdir(dir)) != NULL) {
+            string file_path = device_path + string(entry->d_name);
+            Device d(file_path);
+            for (auto &device_name: device_names) {
+                if (d.init() && d.name() == device_name) {
+                    devices.push_back(d);
+                    break;
+                }
+            }
+        }
+        closedir(dir);
+        return true;
+    }
+
     Device &Device_pool::operator[](unsigned int index) {
         return devices[index];
     }

@@ -9,6 +9,7 @@ namespace moukey {
         Device_pool();
         bool init();
         bool init(const std::string&);
+        bool init(const std::vector<std::string>&);
         void list_devices();
         void capture_all();
         std::vector<Device> devices;

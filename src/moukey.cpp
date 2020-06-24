@@ -130,12 +130,7 @@ namespace moukey{
         if (device_names.empty()){
             dp.init();
         } else {
-            for (auto &dn:device_names)
-                dp.init(dn);
-            if (dp.devices.size() != device_names.size()) {
-                cerr << "Failed to init devices" << endl;
-                exit(1);
-            }
+            dp.init(device_names);
         }
         Server server;
         if (!server.start(port)) {
