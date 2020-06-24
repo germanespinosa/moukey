@@ -9,7 +9,7 @@ namespace moukey {
     struct Server {
         explicit Server(const std::vector<std::string> &);
         bool start(int);
-        bool dispatch_event(const Event &);
+        bool dispatch_event(int16_t, const Event &);
         bool send_data(int, const void *, uint16_t );
         bool send_data(const void *, uint16_t );
         void next_connection();

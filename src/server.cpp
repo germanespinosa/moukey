@@ -30,8 +30,17 @@ namespace moukey {
         return true;
     }
 
-    bool moukey::Server::dispatch_event(const moukey::Event &event) {
-        return send_data((void *) &event.data, sizeof(Event_data));
+    mutex mtx;
+    bool moukey::Server::dispatch_event(int16_t device, const moukey::Event &event) {
+        mtx.lock();
+        if (send_data((void *) &device, sizeof(int16_t))) {
+            if (send_data((void *) &event.data, sizeof(Event_data))){
+                mtx.unlock();
+                return true;
+            }
+        }
+        mtx.unlock();
+        return false;
     }
 
     void Server::_server(Server &server) {
@@ -77,14 +86,11 @@ namespace moukey {
         _server_t.join();
     }
 
-    mutex mtx;
     bool Server::send_data(int client_fd, const void *data, uint16_t size) {
         ssize_t l = 0;
         try {
-            mtx.lock();
             cout <<"sending " << size << " bytes" << endl;
             l = send(client_fd, data, size, 0);
-            mtx.unlock();
         } catch (int e){
             l = 0;
         }

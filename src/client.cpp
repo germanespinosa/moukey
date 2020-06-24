@@ -44,12 +44,15 @@ namespace moukey {
     bool Client::wait_for_event() {
         while (listening){
             try{
-                int res = read(fd, &event.data, sizeof(Event_data));
-                if (res == sizeof(Event_data)) {
-                    return true;
+                int res = read(fd, &device_ind, sizeof(int16_t));
+                if (res == sizeof(int16_t)) {
+                    res = read(fd, &event.data, sizeof(Event_data));
+                    if (res == sizeof(Event_data)) {
+                        return true;
+                    }
                 }
                 if (res) {
-                    cerr << "wrong message size :" << res << " expected " << sizeof(Event_data) << endl;
+                    cerr << "wrong message size :" << res << endl;
                 } else {
                     LOG ("disconnected");
                 }

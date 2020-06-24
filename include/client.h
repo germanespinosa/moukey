@@ -14,6 +14,7 @@ namespace moukey {
         int port;
         int fd;
         bool wait_for_event();
+        int16_t device_ind;
         Event event;
         bool listening;
         std::vector<std::string> device_names;
