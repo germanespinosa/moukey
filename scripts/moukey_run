@@ -22,6 +22,7 @@ fi
 
 if [ "$1" == "" ]; then
   file="$(moukey_location)/moukey.cfg"
+  exit 1
 fi
 user=$(cat $file |head -n 1)
 params=$(cat $file |tail -n 1)
