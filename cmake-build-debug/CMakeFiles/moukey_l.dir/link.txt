@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -g  -rdynamic CMakeFiles/moukey_l.dir/src/device_list.cpp.o  -o moukey_l  libmoukey_lib.a -levdev 

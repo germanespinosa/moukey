@@ -1,8 +1,0 @@
-/usr/local/bin/moukey
-/usr/local/bin/moukey_location
-/usr/local/bin/moukey_client
-/usr/local/bin/moukey_server
-/usr/local/bin/moukey_run
-/usr/local/bin/moukey_uninstall
-/usr/local/bin/moukey_register
-/usr/local/bin/moukey_install

@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -O3 -DNDEBUG  -rdynamic CMakeFiles/moukey.dir/main.cpp.o  -o moukey  libmoukey_lib.a -levdev 

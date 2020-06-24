@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmoukey_lib.a  CMakeFiles/moukey_lib.dir/src/event.cpp.o CMakeFiles/moukey_lib.dir/src/device.cpp.o CMakeFiles/moukey_lib.dir/src/device_pool.cpp.o CMakeFiles/moukey_lib.dir/src/server.cpp.o CMakeFiles/moukey_lib.dir/src/client.cpp.o CMakeFiles/moukey_lib.dir/src/virtual_device.cpp.o CMakeFiles/moukey_lib.dir/src/moukey.cpp.o
-/usr/bin/ranlib libmoukey_lib.a
