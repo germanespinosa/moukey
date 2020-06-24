@@ -16,7 +16,7 @@ cd moukey
 mkdir build
 cd build
 echo "creating make files..."
-cmake .. >/dev/null
+cmake .. -DCMAKE_BUILD_TYPE=Release >/dev/null
 echo "building binaries..."
 make > /dev/null
 echo "installing..."

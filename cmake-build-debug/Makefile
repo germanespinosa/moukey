@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2019.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2019.3/bin/cmake/linux/bin/cmake -E remove -f
+RM = /usr/local/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -56,29 +56,29 @@ CMAKE_BINARY_DIR = /home/german/moukey/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -90,22 +90,10 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -116,13 +104,25 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2019.3/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -157,56 +157,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named moukey_t
+# Target rules for targets named moukey
 
 # Build rule for target.
-moukey_t: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_t
-.PHONY : moukey_t
+moukey: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moukey
+.PHONY : moukey
 
 # fast build rule for target.
-moukey_t/fast:
-	$(MAKE) -f CMakeFiles/moukey_t.dir/build.make CMakeFiles/moukey_t.dir/build
-.PHONY : moukey_t/fast
-
-#=============================================================================
-# Target rules for targets named moukey_d
-
-# Build rule for target.
-moukey_d: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_d
-.PHONY : moukey_d
-
-# fast build rule for target.
-moukey_d/fast:
-	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/build
-.PHONY : moukey_d/fast
-
-#=============================================================================
-# Target rules for targets named moukey_s
-
-# Build rule for target.
-moukey_s: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_s
-.PHONY : moukey_s
-
-# fast build rule for target.
-moukey_s/fast:
-	$(MAKE) -f CMakeFiles/moukey_s.dir/build.make CMakeFiles/moukey_s.dir/build
-.PHONY : moukey_s/fast
-
-#=============================================================================
-# Target rules for targets named moukey_l
-
-# Build rule for target.
-moukey_l: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_l
-.PHONY : moukey_l
-
-# fast build rule for target.
-moukey_l/fast:
-	$(MAKE) -f CMakeFiles/moukey_l.dir/build.make CMakeFiles/moukey_l.dir/build
-.PHONY : moukey_l/fast
+moukey/fast:
+	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/build
+.PHONY : moukey/fast
 
 #=============================================================================
 # Target rules for targets named moukey_lib
@@ -220,45 +181,6 @@ moukey_lib: cmake_check_build_system
 moukey_lib/fast:
 	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/build
 .PHONY : moukey_lib/fast
-
-#=============================================================================
-# Target rules for targets named moukey_c
-
-# Build rule for target.
-moukey_c: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_c
-.PHONY : moukey_c
-
-# fast build rule for target.
-moukey_c/fast:
-	$(MAKE) -f CMakeFiles/moukey_c.dir/build.make CMakeFiles/moukey_c.dir/build
-.PHONY : moukey_c/fast
-
-#=============================================================================
-# Target rules for targets named moukey_v
-
-# Build rule for target.
-moukey_v: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey_v
-.PHONY : moukey_v
-
-# fast build rule for target.
-moukey_v/fast:
-	$(MAKE) -f CMakeFiles/moukey_v.dir/build.make CMakeFiles/moukey_v.dir/build
-.PHONY : moukey_v/fast
-
-#=============================================================================
-# Target rules for targets named moukey
-
-# Build rule for target.
-moukey: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 moukey
-.PHONY : moukey
-
-# fast build rule for target.
-moukey/fast:
-	$(MAKE) -f CMakeFiles/moukey.dir/build.make CMakeFiles/moukey.dir/build
-.PHONY : moukey/fast
 
 main.o: main.cpp.o
 
@@ -341,87 +263,6 @@ src/device.cpp.s:
 	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/device.cpp.s
 .PHONY : src/device.cpp.s
 
-src/device_client.o: src/device_client.cpp.o
-
-.PHONY : src/device_client.o
-
-# target to build an object file
-src/device_client.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey_c.dir/build.make CMakeFiles/moukey_c.dir/src/device_client.cpp.o
-.PHONY : src/device_client.cpp.o
-
-src/device_client.i: src/device_client.cpp.i
-
-.PHONY : src/device_client.i
-
-# target to preprocess a source file
-src/device_client.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey_c.dir/build.make CMakeFiles/moukey_c.dir/src/device_client.cpp.i
-.PHONY : src/device_client.cpp.i
-
-src/device_client.s: src/device_client.cpp.s
-
-.PHONY : src/device_client.s
-
-# target to generate assembly for a file
-src/device_client.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey_c.dir/build.make CMakeFiles/moukey_c.dir/src/device_client.cpp.s
-.PHONY : src/device_client.cpp.s
-
-src/device_display.o: src/device_display.cpp.o
-
-.PHONY : src/device_display.o
-
-# target to build an object file
-src/device_display.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/device_display.cpp.o
-.PHONY : src/device_display.cpp.o
-
-src/device_display.i: src/device_display.cpp.i
-
-.PHONY : src/device_display.i
-
-# target to preprocess a source file
-src/device_display.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/device_display.cpp.i
-.PHONY : src/device_display.cpp.i
-
-src/device_display.s: src/device_display.cpp.s
-
-.PHONY : src/device_display.s
-
-# target to generate assembly for a file
-src/device_display.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/device_display.cpp.s
-.PHONY : src/device_display.cpp.s
-
-src/device_list.o: src/device_list.cpp.o
-
-.PHONY : src/device_list.o
-
-# target to build an object file
-src/device_list.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey_l.dir/build.make CMakeFiles/moukey_l.dir/src/device_list.cpp.o
-.PHONY : src/device_list.cpp.o
-
-src/device_list.i: src/device_list.cpp.i
-
-.PHONY : src/device_list.i
-
-# target to preprocess a source file
-src/device_list.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey_l.dir/build.make CMakeFiles/moukey_l.dir/src/device_list.cpp.i
-.PHONY : src/device_list.cpp.i
-
-src/device_list.s: src/device_list.cpp.s
-
-.PHONY : src/device_list.s
-
-# target to generate assembly for a file
-src/device_list.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey_l.dir/build.make CMakeFiles/moukey_l.dir/src/device_list.cpp.s
-.PHONY : src/device_list.cpp.s
-
 src/device_pool.o: src/device_pool.cpp.o
 
 .PHONY : src/device_pool.o
@@ -448,87 +289,6 @@ src/device_pool.s: src/device_pool.cpp.s
 src/device_pool.cpp.s:
 	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/device_pool.cpp.s
 .PHONY : src/device_pool.cpp.s
-
-src/device_server.o: src/device_server.cpp.o
-
-.PHONY : src/device_server.o
-
-# target to build an object file
-src/device_server.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey_s.dir/build.make CMakeFiles/moukey_s.dir/src/device_server.cpp.o
-.PHONY : src/device_server.cpp.o
-
-src/device_server.i: src/device_server.cpp.i
-
-.PHONY : src/device_server.i
-
-# target to preprocess a source file
-src/device_server.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey_s.dir/build.make CMakeFiles/moukey_s.dir/src/device_server.cpp.i
-.PHONY : src/device_server.cpp.i
-
-src/device_server.s: src/device_server.cpp.s
-
-.PHONY : src/device_server.s
-
-# target to generate assembly for a file
-src/device_server.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey_s.dir/build.make CMakeFiles/moukey_s.dir/src/device_server.cpp.s
-.PHONY : src/device_server.cpp.s
-
-src/device_test.o: src/device_test.cpp.o
-
-.PHONY : src/device_test.o
-
-# target to build an object file
-src/device_test.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey_t.dir/build.make CMakeFiles/moukey_t.dir/src/device_test.cpp.o
-.PHONY : src/device_test.cpp.o
-
-src/device_test.i: src/device_test.cpp.i
-
-.PHONY : src/device_test.i
-
-# target to preprocess a source file
-src/device_test.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey_t.dir/build.make CMakeFiles/moukey_t.dir/src/device_test.cpp.i
-.PHONY : src/device_test.cpp.i
-
-src/device_test.s: src/device_test.cpp.s
-
-.PHONY : src/device_test.s
-
-# target to generate assembly for a file
-src/device_test.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey_t.dir/build.make CMakeFiles/moukey_t.dir/src/device_test.cpp.s
-.PHONY : src/device_test.cpp.s
-
-src/device_vd_test.o: src/device_vd_test.cpp.o
-
-.PHONY : src/device_vd_test.o
-
-# target to build an object file
-src/device_vd_test.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey_v.dir/build.make CMakeFiles/moukey_v.dir/src/device_vd_test.cpp.o
-.PHONY : src/device_vd_test.cpp.o
-
-src/device_vd_test.i: src/device_vd_test.cpp.i
-
-.PHONY : src/device_vd_test.i
-
-# target to preprocess a source file
-src/device_vd_test.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey_v.dir/build.make CMakeFiles/moukey_v.dir/src/device_vd_test.cpp.i
-.PHONY : src/device_vd_test.cpp.i
-
-src/device_vd_test.s: src/device_vd_test.cpp.s
-
-.PHONY : src/device_vd_test.s
-
-# target to generate assembly for a file
-src/device_vd_test.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey_v.dir/build.make CMakeFiles/moukey_v.dir/src/device_vd_test.cpp.s
-.PHONY : src/device_vd_test.cpp.s
 
 src/event.o: src/event.cpp.o
 
@@ -590,7 +350,6 @@ src/server.o: src/server.cpp.o
 
 # target to build an object file
 src/server.cpp.o:
-	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/server.cpp.o
 	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/server.cpp.o
 .PHONY : src/server.cpp.o
 
@@ -600,7 +359,6 @@ src/server.i: src/server.cpp.i
 
 # target to preprocess a source file
 src/server.cpp.i:
-	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/server.cpp.i
 	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/server.cpp.i
 .PHONY : src/server.cpp.i
 
@@ -610,7 +368,6 @@ src/server.s: src/server.cpp.s
 
 # target to generate assembly for a file
 src/server.cpp.s:
-	$(MAKE) -f CMakeFiles/moukey_d.dir/build.make CMakeFiles/moukey_d.dir/src/server.cpp.s
 	$(MAKE) -f CMakeFiles/moukey_lib.dir/build.make CMakeFiles/moukey_lib.dir/src/server.cpp.s
 .PHONY : src/server.cpp.s
 
@@ -647,20 +404,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/local"
 	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... moukey_t"
-	@echo "... moukey_d"
-	@echo "... install"
-	@echo "... moukey_s"
-	@echo "... moukey_l"
-	@echo "... edit_cache"
-	@echo "... moukey_lib"
-	@echo "... moukey_c"
-	@echo "... moukey_v"
+	@echo "... install/local"
 	@echo "... moukey"
+	@echo "... list_install_components"
+	@echo "... moukey_lib"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... install"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -670,27 +421,9 @@ help:
 	@echo "... src/device.o"
 	@echo "... src/device.i"
 	@echo "... src/device.s"
-	@echo "... src/device_client.o"
-	@echo "... src/device_client.i"
-	@echo "... src/device_client.s"
-	@echo "... src/device_display.o"
-	@echo "... src/device_display.i"
-	@echo "... src/device_display.s"
-	@echo "... src/device_list.o"
-	@echo "... src/device_list.i"
-	@echo "... src/device_list.s"
 	@echo "... src/device_pool.o"
 	@echo "... src/device_pool.i"
 	@echo "... src/device_pool.s"
-	@echo "... src/device_server.o"
-	@echo "... src/device_server.i"
-	@echo "... src/device_server.s"
-	@echo "... src/device_test.o"
-	@echo "... src/device_test.i"
-	@echo "... src/device_test.s"
-	@echo "... src/device_vd_test.o"
-	@echo "... src/device_vd_test.i"
-	@echo "... src/device_vd_test.s"
 	@echo "... src/event.o"
 	@echo "... src/event.i"
 	@echo "... src/event.s"
