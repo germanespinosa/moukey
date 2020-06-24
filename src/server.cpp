@@ -37,7 +37,7 @@ namespace moukey {
             ssize_t l = 0;
             try {
                 mtx.lock();
-                LOG("sending " << sizeof(Event_data) << " bytes" );
+                cout <<"sending " << sizeof(Event_data) << " bytes" << endl;
                 l = send(connections[active_connection], (void *) &event.data, sizeof(Event_data), 0);
                 mtx.unlock();
             } catch (int e){
