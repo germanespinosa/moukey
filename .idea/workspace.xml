@@ -20,9 +20,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bd2bfc81-edae-4b4b-a101-17f0e88e2e1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/client.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/client.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/device_pool.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/device_pool.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/server.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/server.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/virtual_device.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/virtual_device.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/device_pool.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/device_pool.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/device_vd_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/device_vd_test.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/moukey.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/moukey.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/virtual_device.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/virtual_device.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +132,7 @@
       <workItem from="1592850795819" duration="12172000" />
       <workItem from="1592866985057" duration="17281000" />
       <workItem from="1592953470431" duration="270000" />
-      <workItem from="1592954133136" duration="13746000" />
+      <workItem from="1592954133136" duration="18576000" />
     </task>
     <servers />
   </component>

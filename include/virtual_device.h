@@ -7,10 +7,11 @@
 
 namespace moukey {
     struct Virtual_device {
-        bool init (std::string);
-        void dispatch(const Event&);
+        bool init (const std::vector<std::string> &);
+        void dispatch(int, const Event&);
         void stop();
-        libevdev *dev;
-        libevdev_uinput *uidev;
+        std::vector<libevdev *>dev;
+        std::vector<libevdev_uinput *>uidev;
+        std::vector<std::string> device_names;
     };
 }

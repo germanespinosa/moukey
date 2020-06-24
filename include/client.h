@@ -16,5 +16,6 @@ namespace moukey {
         bool wait_for_event();
         Event event;
         bool listening;
+        std::vector<std::string> device_names;
     };
 }

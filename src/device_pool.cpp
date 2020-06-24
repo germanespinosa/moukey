@@ -39,8 +39,10 @@ namespace moukey{
         while ((entry = readdir(dir)) != NULL) {
             string file_path = device_path + string(entry->d_name);
             Device d(file_path);
-            if (d.init())
+            if (d.init()) {
                 devices.push_back(d);
+                device_names.push_back(d.name());
+            }
         }
         closedir(dir);
         return true;
@@ -55,14 +57,17 @@ namespace moukey{
         while ((entry = readdir(dir)) != NULL) {
             string file_path = device_path + string(entry->d_name);
             Device d(file_path);
-            if (d.init() && d.name() == device_name)
+            if (d.init() && d.name() == device_name) {
                 devices.push_back(d);
+                device_names.push_back(d.name());
+                break;
+            }
         }
         closedir(dir);
         return true;
     }
 
-    bool Device_pool::init(const vector<string>& device_names) {
+    bool Device_pool::init(const vector<string>& d_n) {
         struct dirent *entry;
         DIR *dir = opendir(device_path.c_str());
         if (dir == NULL) {
@@ -71,9 +76,10 @@ namespace moukey{
         while ((entry = readdir(dir)) != NULL) {
             string file_path = device_path + string(entry->d_name);
             Device d(file_path);
-            for (auto &device_name: device_names) {
+            for (auto &device_name: d_n) {
                 if (d.init() && d.name() == device_name) {
                     devices.push_back(d);
+                    device_names.push_back(d.name());
                     break;
                 }
             }

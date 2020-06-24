@@ -17,6 +17,22 @@ namespace moukey {
         address.sin_port = htons(port);
         if(inet_pton(AF_INET, a.c_str(), &address.sin_addr)<=0) return false;
         if (connect(fd, (struct sockaddr *)&address, sizeof(address)) < 0) return false;
+        LOG("connected");
+        int device_count = 0;
+        read(fd, &device_count, sizeof(uint16_t));
+        char buffer[255];
+        LOG(device_count << " devices served");
+        for (int d = 0;d<device_count;d++){
+            int device_name_size = 0;
+            read(fd, &device_name_size, sizeof(uint16_t));
+            int msg_len = read(fd, buffer, device_name_size);
+            if (msg_len == device_name_size){
+                buffer[msg_len]= 0;
+                LOG(buffer );
+                device_names.emplace_back(buffer);
+            }
+        }
+        LOG("client ready");
         return true;
     }
 

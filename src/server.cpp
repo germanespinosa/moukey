@@ -13,7 +13,6 @@ namespace moukey {
     bool Server::start(int p) {
         port = p;
         int opt = 1;
-        char buffer[1024] = {0};
 
         if ((fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) return false;
         if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) return false;
@@ -31,27 +30,8 @@ namespace moukey {
         return true;
     }
 
-    mutex mtx;
-    bool moukey::Server::dispatch(const moukey::Event &event) {
-        if (active_connection>=0){
-            ssize_t l = 0;
-            try {
-                mtx.lock();
-                cout <<"sending " << sizeof(Event_data) << " bytes" << endl;
-                l = send(connections[active_connection], (void *) &event.data, sizeof(Event_data), 0);
-                mtx.unlock();
-            } catch (int e){
-                l = 0;
-            }
-            if ( l != sizeof(Event_data)){
-                close(connections[active_connection]);
-                connections.erase(connections.begin() + active_connection);
-                active_connection = -1;
-                return false;
-            }
-            return true;
-        }
-        return false;
+    bool moukey::Server::dispatch_event(const moukey::Event &event) {
+        return send_data((void *) &event.data, sizeof(Event_data));
     }
 
     void Server::_server(Server &server) {
@@ -63,6 +43,7 @@ namespace moukey {
                 if (server.running && pfd.revents & POLLIN) {
                     new_socket = accept(server.fd, NULL, 0);
                     cout << "new connection" << endl;
+                    server.send_devices_info();
                     if (new_socket>=0) server.connections.push_back(new_socket);
                     server.active_connection = 0;
                 }
@@ -72,8 +53,9 @@ namespace moukey {
         }
     }
 
-    Server::Server():
-    active_connection(-1){
+    Server::Server( const std::vector<std::string> &device_names):
+        device_names(device_names),
+        active_connection(-1){
 
     }
 
@@ -93,5 +75,39 @@ namespace moukey {
         running = false;
         close(fd);
         _server_t.join();
+    }
+
+    mutex mtx;
+    bool Server::send_data(const void *data, uint16_t size) {
+        if (active_connection>=0){
+            ssize_t l = 0;
+            try {
+                mtx.lock();
+                cout <<"sending " << size << " bytes" << endl;
+                l = send(connections[active_connection], data, size, 0);
+                mtx.unlock();
+            } catch (int e){
+                l = 0;
+            }
+            if ( l != size){
+                close(connections[active_connection]);
+                connections.erase(connections.begin() + active_connection);
+                active_connection = -1;
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    void Server::send_devices_info() {
+        uint16_t count = device_names.size();
+        send_data(&count, sizeof(uint16_t));
+        for (int i=0; i<count; i++){
+            auto device_name = device_names[i];
+            uint16_t size = device_name.size();
+            send_data(&size, sizeof(uint16_t));
+            send_data(device_name.c_str(), size);
+        }
     }
 }

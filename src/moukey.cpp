@@ -34,7 +34,7 @@ namespace moukey{
                 LOG ("switching connection");
                 server.next_connection();
             } else {
-                if (server.dispatch(device.event)) {
+                if (server.dispatch_event(device.event)) {
                     LOG("event dispatch success");
                 } else {
                     LOG("event dispatch fail");
@@ -47,7 +47,7 @@ namespace moukey{
         LOG("waiting for events");
         while (client.wait_for_event()) {
             LOG(client.event);
-            vd.dispatch(client.event);
+            vd.dispatch(0, client.event);
         }
         LOG("connection closed");
         exit(1);
@@ -132,7 +132,7 @@ namespace moukey{
         } else {
             dp.init(device_names);
         }
-        Server server;
+        Server server(dp.device_names);
         if (!server.start(port)) {
             cerr << "failed to start server" << endl;
         };
@@ -156,18 +156,18 @@ namespace moukey{
 
     void device_client(std::string server_address, int port, int duration){
         Client client;
-        Virtual_device vd;
         if (port==0){
             cerr << "wrong port" << endl;
-            exit(1);
-        }
-        if (!vd.init("moukey virtual device")){
-            cerr << "failed to create virtual device" << endl;
             exit(1);
         }
         if (!client.init(server_address, port))
         {
             cerr << "failed to connect to " << server_address << ":" << port << endl;
+            exit(1);
+        }
+        Virtual_device vd;
+        if (!vd.init(client.device_names)){
+            cerr << "failed to create virtual device" << endl;
             exit(1);
         }
         client.listen();

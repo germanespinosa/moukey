@@ -13,6 +13,7 @@ namespace moukey {
         void list_devices();
         void capture_all();
         std::vector<Device> devices;
+        std::vector<std::string> device_names;
         std::string device_path;
         Device &operator [](unsigned int);
     };
