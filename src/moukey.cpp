@@ -63,8 +63,9 @@ namespace moukey{
     void device_list(unsigned int device_ind){
         Device_pool dp;
         dp.init();
-        if (device_ind< dp.devices.size())
+        if (device_ind< dp.devices.size()) {
             LOG(dp[device_ind].name());
+        }
         else {
             cerr << "Device not found" << endl;
             exit(1);
