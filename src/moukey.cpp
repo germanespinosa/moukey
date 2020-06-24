@@ -19,9 +19,9 @@ namespace moukey{
     void process_device_events(int16_t  device_index, Device &device, Server &server, Event_data &modifier, Event_data &trigger){
         bool modifier_on = false;
         device.listen();
-        LOG("listening " << device.index );
+        LOG("listening " << device.name() << " on " << device_index);
         while (device.wait_for_event()) {
-            LOG ( "event "<< device.event << " for " << device << " " << device.index);
+            LOG ( "event "<< device.event << " for " << device << " " << device.name());
             if (modifier.type == device.event.data.type
                 && modifier.code == device.event.data.code) {
                 if (device.event.data.value < 2) {
@@ -36,7 +36,7 @@ namespace moukey{
                 LOG ("switching connection");
                 server.next_connection();
             } else {
-                if (server.dispatch_event(device.index, device.event)) {
+                if (server.dispatch_event(device_index, device.event)) {
                     LOG("event dispatch success");
                 } else {
                     LOG("event dispatch fail");
@@ -147,7 +147,7 @@ namespace moukey{
         trigger.code = 41;
         for (int i=0;i<dp.devices.size(); i++) {
             auto &device = dp.devices[i];
-            LOG("creating thread for " << device.index);
+            LOG("creating thread for " << device.name());
             threads.emplace_back(process_device_events, i,  ref(device), ref(server), ref(modifier), ref(trigger));
         }
         if (duration<=0) while(true);
