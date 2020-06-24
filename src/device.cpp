@@ -83,6 +83,7 @@ namespace moukey{
         int rc = 0;
         input_event ev{};
         while (listening) {
+            LOG("waiting for event " << name() << " handler at " << handler);
             rc = libevdev_next_event(handler, LIBEVDEV_READ_FLAG_NORMAL, &ev);
             if (rc == 0) {
                 event.data.type = ev.type;
