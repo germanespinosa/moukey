@@ -132,12 +132,15 @@ namespace moukey{
         } else {
             for (auto &dn:device_names)
                 dp.init(dn);
-            if (dp.devices.size() != device_names.size())
+            if (dp.devices.size() != device_names.size()) {
                 cerr << "Failed to init devices" << endl;
                 exit(1);
+            }
         }
         Server server;
-        server.start(port);
+        if (!server.start(port)) {
+            cerr << "failed to start server" << endl;
+        };
         vector<thread> threads;
         Event_data modifier{};
         modifier.type = 1;
@@ -147,7 +150,6 @@ namespace moukey{
         trigger.code = 41;
         for (auto &device: dp.devices)
             threads.emplace_back(process_device_events, ref(dp[0]), ref(server), ref(modifier), ref(trigger));
-
         if (duration<=0) while(true);
         this_thread::sleep_for(chrono::milliseconds(duration*1000) );
         for (auto &device: dp.devices)

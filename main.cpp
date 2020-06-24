@@ -38,10 +38,11 @@ int main(int argc, char** args) {
     if (params["-s"].present()) {
         if (!params["-s"].empty) {
             int duration = params["-s"][1].int_value(0);
-            if (duration>0)
+            if (duration>0) {
                 device_server(params["-s"].int_value(), params["-s"][2].content, params["-s"][1].int_value());
-            else
-                device_server(params["-s"].int_value(), params["-s"][1].content, 0);
+            } else {
+                device_server(params["-s"].int_value(), params["-s"][1].content);
+            }
         }
         else {
             exit(1);
