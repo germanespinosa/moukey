@@ -20,7 +20,7 @@ namespace moukey {
         LOG("connected");
         int device_count = 0;
         read(fd, &device_count, sizeof(uint16_t));
-        char buffer[255];
+        char buffer[1024];
         LOG(device_count << " devices served");
         for (int d = 0;d<device_count;d++){
             int device_name_size = 0;

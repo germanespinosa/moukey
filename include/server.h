@@ -10,10 +10,11 @@ namespace moukey {
         explicit Server(const std::vector<std::string> &);
         bool start(int);
         bool dispatch_event(const Event &);
+        bool send_data(int, const void *, uint16_t );
         bool send_data(const void *, uint16_t );
         void next_connection();
         void previous_connection();
-        void send_devices_info();
+        void send_devices_info(int );
         sockaddr_in address;
         int port;
         std::vector<int> connections;

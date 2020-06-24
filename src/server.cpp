@@ -43,7 +43,7 @@ namespace moukey {
                 if (server.running && pfd.revents & POLLIN) {
                     new_socket = accept(server.fd, NULL, 0);
                     cout << "new connection" << endl;
-                    server.send_devices_info();
+                    server.send_devices_info(new_socket);
                     if (new_socket>=0) server.connections.push_back(new_socket);
                     server.active_connection = 0;
                 }
@@ -78,19 +78,28 @@ namespace moukey {
     }
 
     mutex mtx;
+    bool Server::send_data(int client_fd, const void *data, uint16_t size) {
+        ssize_t l = 0;
+        try {
+            mtx.lock();
+            cout <<"sending " << size << " bytes" << endl;
+            l = send(client_fd, data, size, 0);
+            mtx.unlock();
+        } catch (int e){
+            l = 0;
+        }
+        if ( l != size){
+            close(client_fd);
+            active_connection = -1;
+            return false;
+        }
+        return true;
+    }
+
     bool Server::send_data(const void *data, uint16_t size) {
         if (active_connection>=0){
             ssize_t l = 0;
-            try {
-                mtx.lock();
-                cout <<"sending " << size << " bytes" << endl;
-                l = send(connections[active_connection], data, size, 0);
-                mtx.unlock();
-            } catch (int e){
-                l = 0;
-            }
-            if ( l != size){
-                close(connections[active_connection]);
+            if (!send_data(connections[active_connection], data,size)){
                 connections.erase(connections.begin() + active_connection);
                 active_connection = -1;
                 return false;
@@ -100,16 +109,16 @@ namespace moukey {
         return false;
     }
 
-    void Server::send_devices_info() {
+    void Server::send_devices_info(int new_socket) {
         uint16_t count = device_names.size();
         LOG("serving "<< count << " devices");
-        send_data(&count, sizeof(uint16_t));
+        send_data(new_socket, &count, sizeof(uint16_t));
         for (int i=0; i<count; i++){
             auto device_name = device_names[i];
             uint16_t size = device_name.size();
             LOG("sending " << size << " " << device_name);
-            send_data(&size, sizeof(uint16_t));
-            send_data(device_name.c_str(), size);
+            send_data(new_socket, &size, sizeof(uint16_t));
+            send_data(new_socket, device_name.c_str(), size);
         }
     }
 }
