@@ -15,6 +15,11 @@ echo "Moukey 0.1.2020 by German Espinosa "
 echo "-----------------------------------"
 
 file=$1
+
+if [ ! -f "$file" ]; then
+    echo "configuration file not found. run moukey_server or moukey_client first"
+fi
+
 if [ "$1" == "" ]; then
   file="$(moukey_location)/moukey.cfg"
 fi
