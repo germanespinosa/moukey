@@ -41,7 +41,9 @@ if [ "$user" == "" ]; then
   user="root"
 fi
 
-sudo echo "$user" > "$(moukey_location)/moukey.cfg"
-sudo echo "$port $device_names" >> "$(moukey_location)/moukey.cfg"
+cfg_file="$(moukey_location)/moukey.cfg"
 
-echo "configuration file saved. run moukey_run to start moukey"
+sudo echo "$user" > "$cfg_file"
+sudo echo "-s $port $device_names" >> "$cfg_file"
+
+echo "configuration file $cfg_file saved. run moukey_run to start moukey"
