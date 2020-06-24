@@ -102,9 +102,11 @@ namespace moukey {
 
     void Server::send_devices_info() {
         uint16_t count = device_names.size();
+        LOG("serving "<< count << "devices");
         send_data(&count, sizeof(uint16_t));
         for (int i=0; i<count; i++){
             auto device_name = device_names[i];
+            LOG("sending " << device_name);
             uint16_t size = device_name.size();
             send_data(&size, sizeof(uint16_t));
             send_data(device_name.c_str(), size);
