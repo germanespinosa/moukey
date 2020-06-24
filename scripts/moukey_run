@@ -30,4 +30,9 @@ params=$(cat $file |tail -n 1)
 
 eval "show_params $params"
 
-eval "sudo -H -u $user moukey $params"
+while :
+do
+  eval "sudo -H -u $user moukey $params"
+  sleep 1
+done
+

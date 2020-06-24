@@ -20,7 +20,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd2bfc81-edae-4b4b-a101-17f0e88e2e1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moukey.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/moukey.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/moukey_run" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_run" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +127,7 @@
       <workItem from="1593032128272" duration="154000" />
       <workItem from="1593032763070" duration="130000" />
       <workItem from="1593033057060" duration="141000" />
+      <workItem from="1593033672147" duration="71000" />
     </task>
     <servers />
   </component>
