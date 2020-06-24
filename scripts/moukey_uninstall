@@ -4,7 +4,6 @@ if (( $EUID != 0 )); then
     exit
 fi
 sudo ""
-echo "uninstalling moukey..."
 moukey_location=$(moukey_location)
 sudo moukey_register remove
 sudo rm $moukey_location/moukey*

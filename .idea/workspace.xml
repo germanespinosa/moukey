@@ -19,7 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd2bfc81-edae-4b4b-a101-17f0e88e2e1a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/moukey_register" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_register" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/moukey_uninstall" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_uninstall" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +122,7 @@
       <workItem from="1592850795819" duration="12172000" />
       <workItem from="1592866985057" duration="17281000" />
       <workItem from="1592953470431" duration="270000" />
-      <workItem from="1592954133136" duration="10315000" />
+      <workItem from="1592954133136" duration="10423000" />
     </task>
     <servers />
   </component>
