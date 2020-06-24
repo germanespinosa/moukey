@@ -19,12 +19,18 @@ namespace moukey {
         if (connect(fd, (struct sockaddr *)&address, sizeof(address)) < 0) return false;
         LOG("connected");
         int device_count = 0;
-        read(fd, &device_count, sizeof(uint16_t));
+        int res = read(fd, &device_count, sizeof(uint16_t));
+        if ( res != sizeof(uint16_t)){
+            cerr<< "msg error";
+        }
         char buffer[1024];
         LOG(device_count << " devices served");
         for (int d = 0;d<device_count;d++){
             int device_name_size = 0;
-            read(fd, &device_name_size, sizeof(uint16_t));
+            res = read(fd, &device_name_size, sizeof(uint16_t));
+            if ( res != sizeof(uint16_t)){
+                cerr<< "msg error";
+            }
             int msg_len = read(fd, buffer, device_name_size);
             if (msg_len == device_name_size){
                 buffer[msg_len]= 0;
