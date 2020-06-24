@@ -5,7 +5,7 @@ if (( $EUID != 0 )); then
     echo "please run as root"
     exit
 fi
-sudo ""
+echo ""
 echo "installing prerequisites..."
 apt-get install cmake git libevdev-dev -y >/dev/null
 tmp_dir=$(mktemp -d -t ci-XXXXXXXXXX)
