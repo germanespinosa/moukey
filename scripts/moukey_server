@@ -5,17 +5,7 @@ if (( $EUID != 0 )); then
 fi
 
 function get_device_names (){
-  if [ "$1" == "a" ]; then
-    i=0
-    device_name=$(moukey -l $i)
-    done=$?
-    while [ $done -eq 0 ]; do
-      printf "\"$device_name\" "
-      i=$((i + 1))
-      device_name=$(moukey -l $i)
-      done=$?
-    done
-  else
+  if [ "$1" != "a" ]; then
     for var in "$@"
     do
       device_name=$(moukey -l $var)
@@ -29,7 +19,7 @@ echo "Moukey Server 0.1.2020 by German Espinosa "
 echo "------------------------------------------"
 moukey -l
 echo "a: All"
-read -p "Select devices: " device_numbers
+read -p "Select devices[a]: " device_numbers
 device_names=$(get_device_names $device_numbers 2>/dev/null)
 read -p "Select port[4749]: " port
 if [ "$port" == "" ]; then
