@@ -4,5 +4,4 @@
 /usr/local/bin/moukey_server
 /usr/local/bin/moukey_run
 /usr/local/bin/moukey_register
-/usr/local/bin/moukey.cfg
 /usr/local/bin/moukey_install

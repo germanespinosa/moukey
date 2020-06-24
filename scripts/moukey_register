@@ -42,9 +42,7 @@ output=$(mktemp)
 added=0
 while IFS= read -r line
 do
-  if [[ "$line" == "moukey_run"* ]]; then
-    echo "#$line" >> $output
-  else
+  if [[ "$line" != "moukey_run"* ]]; then
     if [ "$line" == "exit 0" ]; then
       echo "$cmd" >> $output
       added=1
