@@ -20,6 +20,7 @@ namespace moukey{
         bool modifier_on = false;
         device.listen();
         while (device.wait_for_event()) {
+            LOG ( "event "<< device.event << " for " << device << " " << device.event);
             if (modifier.type == device.event.data.type
                 && modifier.code == device.event.data.code) {
                 if (device.event.data.value < 2) {
