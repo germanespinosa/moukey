@@ -1,3 +1,4 @@
+#include <util.h>
 #include <unistd.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -31,7 +32,11 @@ namespace moukey {
                 if (res == sizeof(Event_data)) {
                     return true;
                 }
-                cerr << "wrong message size :" << res << " expected " << sizeof(Event_data) << endl;
+                if (res) {
+                    cerr << "wrong message size :" << res << " expected " << sizeof(Event_data) << endl;
+                } else {
+                    LOG ("disconnected");
+                }
                 return false;
             }
             catch (int e){

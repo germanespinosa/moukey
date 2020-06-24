@@ -6,15 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/event.h
-libevdev/libevdev.h
--
-string
--
-vector
--
-
-../include/server.h
+../include/client.h
 event.h
 -
 netinet/in.h
@@ -23,7 +15,13 @@ string
 -
 vector
 -
-thread
+
+../include/event.h
+libevdev/libevdev.h
+-
+string
+-
+vector
 -
 
 ../include/util.h
@@ -32,20 +30,18 @@ chrono
 iostream
 -
 
-/home/german/moukey/src/server.cpp
-poll.h
+/home/german/moukey/src/client.cpp
+util.h
 -
 unistd.h
 -
 sys/socket.h
 -
+arpa/inet.h
+-
 iostream
 -
-server.h
--
-mutex
--
-util.h
+client.h
 -
 
 /usr/include/libevdev-1.0/libevdev/libevdev.h

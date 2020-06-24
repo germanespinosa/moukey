@@ -3,6 +3,7 @@
 
 CMakeFiles/moukey_lib.dir/src/client.cpp.o: ../include/client.h
 CMakeFiles/moukey_lib.dir/src/client.cpp.o: ../include/event.h
+CMakeFiles/moukey_lib.dir/src/client.cpp.o: ../include/util.h
 CMakeFiles/moukey_lib.dir/src/client.cpp.o: ../src/client.cpp
 CMakeFiles/moukey_lib.dir/src/client.cpp.o: /usr/include/libevdev-1.0/libevdev/libevdev.h
 

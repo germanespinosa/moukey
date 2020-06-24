@@ -4,6 +4,7 @@
 CMakeFiles/moukey_lib.dir/src/client.cpp.o
  ../include/client.h
  ../include/event.h
+ ../include/util.h
  /home/german/moukey/src/client.cpp
  /usr/include/libevdev-1.0/libevdev/libevdev.h
 CMakeFiles/moukey_lib.dir/src/device.cpp.o
