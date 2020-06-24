@@ -64,7 +64,7 @@ namespace moukey{
         Device_pool dp;
         dp.init();
         if (device_ind< dp.devices.size()) {
-            LOG(dp[device_ind].name());
+            cout << dp[device_ind].name() << endl;
         }
         else {
             cerr << "Device not found" << endl;
