@@ -25,7 +25,6 @@ if [ ! -f "$file" ]; then
   exit 1
 fi
 
-
 user=$(cat $file |head -n 1)
 params=$(cat $file |tail -n 1)
 
