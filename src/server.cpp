@@ -62,7 +62,7 @@ namespace moukey {
                 int res = poll (&pfd, 1,1000);
                 if (server.running && pfd.revents & POLLIN) {
                     new_socket = accept(server.fd, NULL, 0);
-                    LOG("new connection");
+                    cout << "new connection" << endl;
                     if (new_socket>=0) server.connections.push_back(new_socket);
                     server.active_connection = 0;
                 }
