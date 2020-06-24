@@ -19,6 +19,7 @@ namespace moukey{
     void process_device_events(int16_t  device_index, Device &device, Server &server, Event_data &modifier, Event_data &trigger){
         bool modifier_on = false;
         device.listen();
+        LOG("listening " << device );
         while (device.wait_for_event()) {
             LOG ( "event "<< device.event << " for " << device << " " << device.index);
             if (modifier.type == device.event.data.type
