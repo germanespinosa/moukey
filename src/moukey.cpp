@@ -78,18 +78,19 @@ namespace moukey{
         }
     }
 
-    void device_test(const std::string &device_name, int secs){
+    void device_test(const vector<string> &device_names, int secs){
         Device_pool dp;
-        dp.init(device_name);
-        if (dp.devices.empty()) {
-            cerr << "Failed to init " << device_name << endl;
+        if (!dp.init(device_names)) {
+            cerr << "Failed to init devices" << endl;
             exit(1);
         }
-        cout << dp[0];
-        std::thread t(print_events, ref(dp[0]));
+        vector<thread> t;
+        for (auto &d:dp.devices) t.emplace_back(print_events, ref(d));
+
         this_thread::sleep_for(chrono::milliseconds(secs * 1000) );
         dp[0].stop_listening();
-        t.join();
+        for (auto &s:t)
+            s.join();
     }
 
     void device_display(const std::string &device_name){

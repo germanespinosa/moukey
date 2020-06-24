@@ -55,5 +55,5 @@ namespace moukey {
     void device_server(int, int);
     void device_client(std::string, int, int);
     void device_client(std::string, int);
-    void device_test(const std::string &, int);
+    void device_test(const std::vector<std::string> &, int);
 }

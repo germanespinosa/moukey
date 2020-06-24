@@ -28,7 +28,7 @@ int main(int argc, char** args) {
     }
     if (params["-t"].present()) {
         if (!params["-t"].empty) {
-            device_test(params["-t"].value(), params["-t"][1].int_value(10));
+            device_test(params["-t"].content, params["-t"][1].int_value(10));
         }
         else {
             exit(1);
