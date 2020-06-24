@@ -47,12 +47,9 @@ namespace moukey {
 
     void device_list();
     void device_list(unsigned int);
-    void device_display(const std::string &);
     void device_display(const std::vector<std::string>&);
     void device_server(int, std::vector<std::string>, int);
     void device_server(int, std::vector<std::string>);
-    void device_server(int);
-    void device_server(int, int);
     void device_client(std::string, int, int);
     void device_client(std::string, int);
     void device_test(const std::vector<std::string> &, int);

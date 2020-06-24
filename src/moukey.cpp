@@ -118,16 +118,6 @@ namespace moukey{
         }
     }
 
-    void device_server(int port, int duration) {
-        vector<string> device_names;
-        device_server(port, device_names,duration);
-    }
-
-    void device_server(int port) {
-        vector<string> device_names;
-        device_server(port, device_names,-1);
-    }
-
     void device_server(int port, vector<string> device_names) {
         device_server(port, device_names,-1);
     }
