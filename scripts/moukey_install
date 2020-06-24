@@ -6,7 +6,7 @@ if (( $EUID != 0 )); then
   exit
 fi
 
-moukey_loation 2> /dev/null
+moukey_location 2> /dev/null
 if [ "$?" == "0" ]; then
   echo "a previous version of moukey was found. please run moukey_uninstall first"
   exit
