@@ -18,7 +18,7 @@ file=$1
 if [ "$1" == "" ]; then
   file="$(moukey_location)/moukey.cfg"
 fi
-user=$(cat $1 |head -n 1)
-params=$(cat $1 |tail -n 1)
-show_params params
+user=$(cat $file |head -n 1)
+params=$(cat $file |tail -n 1)
+show_params $params
 sudo -H -u $user moukey $params
