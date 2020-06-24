@@ -82,10 +82,11 @@ namespace moukey{
     bool Device::wait_for_event() {
         int rc = 0;
         input_event ev{};
+        LOG("waiting for event " << name() << " handler at " << handler);
         while (listening) {
-            LOG("waiting for event " << name() << " handler at " << handler);
             rc = libevdev_next_event(handler, LIBEVDEV_READ_FLAG_NORMAL, &ev);
             if (rc == 0) {
+                LOG("received event for " << name());
                 event.data.type = ev.type;
                 event.data.code = ev.code;
                 event.data.value = ev.value;
