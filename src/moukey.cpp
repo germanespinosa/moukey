@@ -160,15 +160,21 @@ namespace moukey{
             cerr << "wrong port" << endl;
             exit(1);
         }
-        for (int i = 0; i<10; i ++) {
+        for (int i = 0; i<100; i ++) {
             if (!client.init(server_address, port)) {
                 this_thread::sleep_for(chrono::milliseconds(1000));
-                if (i == 9) {
-                    cerr << "failed to connect to " << server_address << ":" << port << endl;
+                cerr << "failed to connect to " << server_address << ":" << port;
+                if (i > 20 ) {
+                    cerr << "aborted" << endl;
                     exit(1);
+                } else {
+                    LOG ("retry " << i );
+                    cerr << "retry " << i << endl;
                 }
+
             } else {
                 break;
+
             }
         }
         Virtual_device vd;
