@@ -19,7 +19,7 @@ namespace moukey{
     void process_device_events(int16_t  device_index, Device &device, Server &server, Event_data &modifier, Event_data &trigger){
         bool modifier_on = false;
         device.listen();
-        LOG("listening " << device );
+        LOG("listening " << device.index );
         while (device.wait_for_event()) {
             LOG ( "event "<< device.event << " for " << device << " " << device.index);
             if (modifier.type == device.event.data.type
@@ -147,8 +147,8 @@ namespace moukey{
         trigger.code = 41;
         for (int i=0;i<dp.devices.size(); i++) {
             auto &device = dp.devices[i];
-            LOG("creating thread for " << device);
-            threads.emplace_back(process_device_events, i, ref(device), ref(server), ref(modifier), ref(trigger));
+            LOG("creating thread for " << device.index);
+            threads.emplace_back(process_device_events, i,  ref(device), ref(server), ref(modifier), ref(trigger));
         }
         if (duration<=0) while(true);
         this_thread::sleep_for(chrono::milliseconds(duration*1000) );

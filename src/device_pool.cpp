@@ -42,9 +42,7 @@ namespace moukey{
             if (d.init()) {
                 int index = devices.size();
                 LOG("device " << d <<  " found");
-                devices.emplace_back(file_path);
-                devices[index].init();
-                devices[index].index = index;
+                devices.push_back(d);
                 device_names.push_back(d.name());
             }
         }
