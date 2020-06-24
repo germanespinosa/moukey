@@ -2,14 +2,14 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="moukey" targetName="moukey_v" />
+      <config projectName="moukey" targetName="moukey_d" />
       <config projectName="moukey" targetName="moukey_c" />
       <config projectName="moukey" targetName="moukey_s" />
-      <config projectName="moukey" targetName="moukey_d" />
       <config projectName="moukey" targetName="moukey" />
       <config projectName="moukey" targetName="moukey_t" />
       <config projectName="moukey" targetName="moukey_lib" />
       <config projectName="moukey" targetName="moukey_l" />
+      <config projectName="moukey" targetName="moukey_v" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -19,7 +19,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd2bfc81-edae-4b4b-a101-17f0e88e2e1a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/moukey_client" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/moukey_client" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,6 +123,7 @@
       <workItem from="1592866985057" duration="17281000" />
       <workItem from="1592953470431" duration="270000" />
       <workItem from="1592954133136" duration="27291000" />
+      <workItem from="1593032128272" duration="12000" />
     </task>
     <servers />
   </component>
