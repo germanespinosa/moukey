@@ -37,6 +37,7 @@ CMakeFiles/moukey_lib.dir/src/moukey.cpp.o: /usr/include/libevdev-1.0/libevdev/l
 
 CMakeFiles/moukey_lib.dir/src/server.cpp.o: ../include/event.h
 CMakeFiles/moukey_lib.dir/src/server.cpp.o: ../include/server.h
+CMakeFiles/moukey_lib.dir/src/server.cpp.o: ../include/util.h
 CMakeFiles/moukey_lib.dir/src/server.cpp.o: ../src/server.cpp
 CMakeFiles/moukey_lib.dir/src/server.cpp.o: /usr/include/libevdev-1.0/libevdev/libevdev.h
 

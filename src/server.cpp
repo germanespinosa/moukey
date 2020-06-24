@@ -4,6 +4,7 @@
 #include <iostream>
 #include <server.h>
 #include <mutex>
+#include <util.h>
 
 using namespace std;
 
@@ -30,13 +31,15 @@ namespace moukey {
         return true;
     }
 
+    mutex mtx;
     bool moukey::Server::dispatch(const moukey::Event &event) {
         if (active_connection>=0){
             ssize_t l = 0;
             try {
-                mutex mtx;
-                cout << "sending " << sizeof(Event_data) << " bytes" << endl;
+                mtx.lock();
+                LOG("sending " << sizeof(Event_data) << " bytes" );
                 l = send(connections[active_connection], (void *) &event.data, sizeof(Event_data), 0);
+                mtx.unlock();
             } catch (int e){
                 l = 0;
             }
@@ -59,7 +62,7 @@ namespace moukey {
                 int res = poll (&pfd, 1,1000);
                 if (server.running && pfd.revents & POLLIN) {
                     new_socket = accept(server.fd, NULL, 0);
-                    cout << "new connection" <<  endl;
+                    LOG("new connection");
                     if (new_socket>=0) server.connections.push_back(new_socket);
                     server.active_connection = 0;
                 }
