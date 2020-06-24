@@ -47,7 +47,7 @@ namespace moukey{
         LOG("waiting for events");
         while (client.wait_for_event()) {
             LOG(client.event);
-            vd.dispatch(0, client.event);
+            vd.dispatch(client.device_ind, client.event);
         }
         LOG("connection closed");
         exit(1);

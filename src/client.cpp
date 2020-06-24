@@ -46,8 +46,10 @@ namespace moukey {
             try{
                 int res = read(fd, &device_ind, sizeof(int16_t));
                 if (res == sizeof(int16_t)) {
+                    LOG("message for device "<< device_ind);
                     res = read(fd, &event.data, sizeof(Event_data));
                     if (res == sizeof(Event_data)) {
+                        LOG("event received successfully");
                         return true;
                     }
                 }
