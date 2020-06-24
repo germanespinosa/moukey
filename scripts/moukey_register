@@ -4,11 +4,6 @@ if (( $EUID != 0 )); then
     exit
 fi
 
-if [ "$1" != "" ]; then
-  echo "echo \"$1\"">> $1/moukey_location
-  exit
-fi
-
 echo "Moukey 0.1.2020 by German Espinosa "
 echo "-----------------------------------"
 
@@ -34,8 +29,6 @@ if [ ! -f $input ]; then
     sudo echo '#' >> $input
     sudo echo '# By default this script does nothing.' >> $input
     sudo echo 'exit 0' >> $input
-else
-    echo "$input found. Adding automatic startup"
 fi
 
 output=$(mktemp)
@@ -55,4 +48,9 @@ if (( added == 1)); then
 fi
 sudo chmod +x $input
 
-echo "Moukey registered successfully. Reboot needed"
+if [ "$cmd" != "" ]; then
+  echo "Moukey registered successfully. Reboot needed"
+else
+  echo "Moukey removed from startup successfully. Reboot needed"
+fi
+
