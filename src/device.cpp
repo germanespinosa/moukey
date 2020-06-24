@@ -24,7 +24,6 @@ namespace moukey{
         LOG("creating livevdev handler");
         rc = libevdev_new_from_fd(fd, &handler);
         if (rc < 0) {
-            cerr << "failed to create livev handler" <<  endl;
             return false;
         }
         LOG("successfully created livevdev handler");
