@@ -1,6 +1,4 @@
 #!/bin/bash
-#curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/germanespinosa/moukey/master/scripts/moukey_install | sudo bash
-
 if (( $EUID != 0 )); then
     echo "please run as root"
     exit
