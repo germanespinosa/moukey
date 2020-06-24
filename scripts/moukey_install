@@ -2,9 +2,16 @@
 #curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/germanespinosa/moukey/master/scripts/moukey_install | sudo bash
 
 if (( $EUID != 0 )); then
-    echo "please run as root"
-    exit
+  echo "please run as root"
+  exit
 fi
+
+moukey_loation 2> /dev/null
+if [ "$?" == "0" ]; then
+  echo "a previous version of moukey was found. please run moukey_uninstall first"
+  exit
+fi
+
 echo ""
 echo "installing prerequisites..."
 apt-get install cmake git libevdev-dev -y >/dev/null
